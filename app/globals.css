@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-white: #ffffff;
+    --bg-surface: #f7f7f8;
+    --bg-ink: #0b0c0e;
+    --bg-ink-alt: #111318;
+
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --text-muted: #a3a3aa;
+    --text-inverse: #ffffff;
+    --text-inverse-muted: #a3a3aa;
+
+    --brand-primary: #fa582d;
+    --brand-hover: #e0431a;
+    --accent-teal: #8ad3de;
+
+    --border-default: #e5e5e7;
+    --border-dark: #26272b;
+
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-nav: 0 12px 32px rgba(0, 0, 0, 0.15);
+
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-base: all 0.2s var(--ease-out-expo);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base-white text-neutral-900 font-sans antialiased;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+@layer components {
+  .hero-video-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(11, 12, 14, 0.3) 0%,
+      rgba(11, 12, 14, 0.75) 100%
+    );
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(120deg, #fa582d, #ff9868);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .container-content {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-10;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-wide px-4 sm:px-6 lg:px-10;
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full max-w-narrow px-4 sm:px-6;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-24 xl:py-28;
+  }
+
+  .label-eyebrow {
+    @apply text-label uppercase tracking-[0.08em] text-neutral-500;
+  }
+}
+
+@layer utilities {
+  .pause-animation:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Specifically stop the infinite marquee */
+  .animate-marquee {
+    animation: none !important;
+  }
+}
+
+/* ─── Radix animate-in / animate-out utilities ──────────────────────────── */
+/* Used by Tooltip, Toast, SearchOverlay, MegaNavPanel                      */
+@keyframes enter {
+  from { opacity: var(--tw-enter-opacity, 1); transform: translate(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0)) scale(var(--tw-enter-scale, 1)); }
+  to   { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+@keyframes exit {
+  from { opacity: 1; transform: translate(0, 0) scale(1); }
+  to   { opacity: var(--tw-exit-opacity, 1); transform: translate(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0)) scale(var(--tw-exit-scale, 1)); }
+}
+
+.animate-in  { animation: enter 200ms var(--ease-out-expo) forwards; }
+.animate-out { animation: exit  150ms ease-in forwards; }
+
+.fade-in-0  { --tw-enter-opacity: 0; }
+.fade-out-80{ --tw-exit-opacity: 0.8; }
+.zoom-in-95 { --tw-enter-scale: 0.95; }
+.zoom-out-95{ --tw-exit-scale: 0.95; }
+
+.slide-in-from-top-2    { --tw-enter-translate-y: -0.5rem; }
+.slide-in-from-bottom-2 { --tw-enter-translate-y:  0.5rem; }
+.slide-in-from-right-2  { --tw-enter-translate-x:  0.5rem; }
+.slide-in-from-left-2   { --tw-enter-translate-x: -0.5rem; }
+.slide-out-to-right-full{ --tw-exit-translate-x: 100%; }
+.slide-in-from-bottom-full { --tw-enter-translate-y: 100%; }
+

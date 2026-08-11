@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.paloaltonetworks.in
+
+# Sitemaps
+Sitemap: https://www.paloaltonetworks.in/sitemap.xml
