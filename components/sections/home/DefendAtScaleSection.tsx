@@ -357,31 +357,31 @@ const STAT_CARDS = [
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">009</span>
               <span>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#8ad3de]">$query</span> = <span className="text-[#e2a868]">"SELECT * FROM </span><span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">terms ...</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#8ad3de]">$query</span> = <span className="text-[#e2a868]">"SELECT * FROM </span><span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">terms ...</span>
               </span>
             </div>
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">010</span>
               <span>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#FA582D]">JOIN</span> <span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">terms ON ( </span><span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">term_taxonomy.term_id</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#FA582D]">JOIN</span> <span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">terms ON ( </span><span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">term_taxonomy.term_id</span>
               </span>
             </div>
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">011</span>
               <span>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#FA582D]">WHERE</span> <span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">term_taxonomy = 'category'</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#FA582D]">WHERE</span> <span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">term_taxonomy = 'category'</span>
               </span>
             </div>
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">012</span>
               <span>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#FA582D]">ORDER BY</span> <span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">terms.name ASC"</span>;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#FA582D]">ORDER BY</span> <span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">terms.name ASC"</span>;
               </span>
             </div>
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">013</span>
               <span>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#8ad3de]">$categories</span> = <span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">get_results</span>(<span className="text-[#8ad3de]">$query</span>);
+                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#8ad3de]">$categories</span> = <span className="text-[#8ad3de]">$wpdb</span><span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">get_results</span>(<span className="text-[#8ad3de]">$query</span>);
               </span>
             </div>
             <div className="flex">
@@ -399,13 +399,13 @@ const STAT_CARDS = [
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">016</span>
               <span>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#e2a868]">'before_row'</span> <span className="text-[#a3a3a3]">=></span> <span className="text-[#8ad3de]">Core</span>()<span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">helpers</span><span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">open_grid</span>(),
+                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#e2a868]">'before_row'</span> <span className="text-[#a3a3a3]">=&gt;</span> <span className="text-[#8ad3de]">Core</span>()<span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">helpers</span><span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">open_grid</span>(),
               </span>
             </div>
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">017</span>
               <span>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#e2a868]">'after_row'</span> <span className="text-[#a3a3a3]">=></span> <span className="text-[#8ad3de]">Core</span>()<span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">helpers</span><span className="text-[#a3a3a3]">-></span><span className="text-[#e2a868]">close_grid</span>(),
+                &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#e2a868]">'after_row'</span> <span className="text-[#a3a3a3]">=&gt;</span> <span className="text-[#8ad3de]">Core</span>()<span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">helpers</span><span className="text-[#a3a3a3]">-&gt;</span><span className="text-[#e2a868]">close_grid</span>(),
               </span>
             </div>
           </div>
