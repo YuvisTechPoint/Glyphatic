@@ -38,13 +38,13 @@ export function Footer({ className }: FooterProps) {
   }
 
   return (
-    <footer className={cn('border-t border-neutral-200 bg-white', className)}>
+    <footer className={cn('border-t border-white/10 bg-[#141414]', className)}>
       {/* Link columns */}
       <div className="container-wide py-12 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Products and Services */}
           <div className="lg:col-span-7">
-            <h3 className="label-eyebrow mb-6 text-neutral-400">Products and Services</h3>
+            <h3 className="label-eyebrow mb-6 text-neutral-500">Products and Services</h3>
             {productsMenu && (
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 {productsMenu.columns.map((column) => (
@@ -57,7 +57,7 @@ export function Footer({ className }: FooterProps) {
                         <li key={`${column.heading}-${link.href}`}>
                           <Link
                             href={link.href}
-                            className="text-body-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                            className="text-body-sm text-neutral-400 hover:text-white transition-colors"
                           >
                             {link.label}
                           </Link>
@@ -72,7 +72,7 @@ export function Footer({ className }: FooterProps) {
 
           {/* Company */}
           <div className="lg:col-span-2">
-            <h3 className="label-eyebrow mb-6 text-neutral-400">Company</h3>
+            <h3 className="label-eyebrow mb-6 text-neutral-500">Company</h3>
             <ul className="space-y-2">
               {FOOTER_COMPANY.map((link) => (
                 <li key={link.href}>
@@ -80,7 +80,7 @@ export function Footer({ className }: FooterProps) {
                     href={link.href}
                     target={link.external ? '_blank' : undefined}
                     rel={link.external ? 'noopener noreferrer' : undefined}
-                    className="text-body-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                    className="text-body-sm text-neutral-400 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -91,13 +91,13 @@ export function Footer({ className }: FooterProps) {
 
           {/* Popular Links */}
           <div className="lg:col-span-3">
-            <h3 className="label-eyebrow mb-6 text-neutral-400">Popular Links</h3>
+            <h3 className="label-eyebrow mb-6 text-neutral-500">Popular Links</h3>
             <ul className="space-y-2">
               {FOOTER_POPULAR.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-body-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                    className="text-body-sm text-neutral-400 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -109,16 +109,16 @@ export function Footer({ className }: FooterProps) {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-neutral-200">
+      <div className="border-t border-white/10">
         <div className="container-wide flex flex-col gap-6 py-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-            <Logo className="text-base" variant="dark" />
+            <Logo className="text-base" variant="light" />
             <nav aria-label="Legal links" className="flex flex-wrap gap-x-4 gap-y-2">
               {FOOTER_LEGAL.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-xs text-neutral-500 hover:text-neutral-900 transition-colors"
+                  className="text-xs text-neutral-400 hover:text-white transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -127,7 +127,7 @@ export function Footer({ className }: FooterProps) {
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-            <p className="text-xs text-neutral-500">
+            <p className="text-xs text-neutral-400">
               Copyright © {COPYRIGHT_YEAR} {SITE_NAME}. All Rights Reserved.
             </p>
             <div className="flex items-center gap-3">
@@ -135,7 +135,7 @@ export function Footer({ className }: FooterProps) {
                 href={SOCIAL_LINKS.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-500 hover:text-brand-500 transition-colors"
+                className="text-neutral-400 hover:text-[#FA582D] transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="h-4 w-4" />
@@ -144,7 +144,7 @@ export function Footer({ className }: FooterProps) {
                 href={SOCIAL_LINKS.podcast}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-500 hover:text-brand-500 transition-colors"
+                className="text-neutral-400 hover:text-[#FA582D] transition-colors"
                 aria-label="Podcast"
               >
                 <Podcast className="h-4 w-4" />
@@ -153,7 +153,7 @@ export function Footer({ className }: FooterProps) {
                 href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-500 hover:text-brand-500 transition-colors"
+                className="text-neutral-400 hover:text-[#FA582D] transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4" />
@@ -162,7 +162,7 @@ export function Footer({ className }: FooterProps) {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-500 hover:text-brand-500 transition-colors"
+                className="text-neutral-400 hover:text-[#FA582D] transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
@@ -171,7 +171,7 @@ export function Footer({ className }: FooterProps) {
                 href={SOCIAL_LINKS.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-500 hover:text-brand-500 transition-colors"
+                className="text-neutral-400 hover:text-[#FA582D] transition-colors"
                 aria-label="X (Twitter)"
               >
                 <XIcon className="h-4 w-4" />

@@ -17,7 +17,7 @@ export function HeroVideoSection() {
 
       <div className="container-wide relative z-10 pt-20 lg:pt-32">
         <motion.h1
-          className="max-w-4xl font-display text-[3.5rem] lg:text-[4.5rem] tracking-tight leading-[1.1]"
+          className="max-w-3xl font-display text-[3rem] lg:text-[3.75rem] tracking-tight leading-[1.1]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -27,7 +27,7 @@ export function HeroVideoSection() {
         </motion.h1>
 
         <FadeInView delay={0.2}>
-          <p className="mt-8 max-w-[600px] text-[1.1rem] sm:text-[1.25rem] lg:text-[1.4rem] font-bold leading-[1.3] text-white">
+          <p className="mt-6 max-w-[550px] text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] font-medium leading-[1.4] text-white/90">
             We architect the high-performance technology foundations that ambitious companies rely on to scale without limits.
           </p>
         </FadeInView>
@@ -35,7 +35,7 @@ export function HeroVideoSection() {
         <FadeInView delay={0.4}>
           <div className="mt-10 flex flex-wrap items-center gap-8">
             <Link
-              href="/contact-us"
+              href="/discuss-architecture"
               className="inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#2F6BFF] px-8 text-[16px] font-bold text-white transition-all hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0D14]"
             >
               Discuss Your Architecture <ArrowRight className="h-5 w-5" strokeWidth={2.5} />

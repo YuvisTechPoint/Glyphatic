@@ -54,7 +54,6 @@ export const MEGA_NAV: MegaNavMenu[] = [
       title: 'Architecting for the Next Billion',
       description: 'See how we build high-availability systems for the Indian enterprise market.',
       href: '/case-studies',
-      image: '/images/nav-featured-idira.jpg',
     },
   },
   {

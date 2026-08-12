@@ -1,11 +1,9 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Search, ArrowRight, FileText, Shield, BookOpen } from 'lucide-react'
+import { Search as SearchIcon, X, ArrowRight, FileText, Shield, BookOpen } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { Input } from '@/components/ui/Input'
-import { Modal, ModalFullscreenContent } from '@/components/ui/Modal'
 
 type SearchResult = {
   title: string
@@ -67,6 +65,18 @@ export interface SearchOverlayProps {
 export function SearchOverlay({ open, onOpenChange }: SearchOverlayProps) {
   const [query, setQuery] = useState('')
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onOpenChange(false)
+      }
+    }
+    if (open) {
+      window.addEventListener('keydown', handleKeyDown)
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [open, onOpenChange])
+
   const results = useMemo(() => {
     const q = query.trim().toLowerCase()
     if (!q) return MOCK_RESULTS.slice(0, 5)
@@ -77,29 +87,53 @@ export function SearchOverlay({ open, onOpenChange }: SearchOverlayProps) {
     )
   }, [query])
 
+  if (!open) return null
+
   return (
-    <Modal open={open} onOpenChange={onOpenChange}>
-      <ModalFullscreenContent className="bg-white">
-        <div className="container-content flex flex-col pt-20 pb-10">
-          <div className="relative max-w-3xl">
-            <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-400" />
-            <Input
+    <div className="fixed inset-0 z-[150] bg-black/40 backdrop-blur-sm animate-in fade-in-0 duration-200">
+      {/* Top Search Bar Container */}
+      <div className="container-wide pt-3">
+        <div className="relative flex items-center justify-between gap-4 rounded-xl bg-[#141414] p-3 px-6 shadow-2xl border border-white/10 text-white">
+          
+          <div className="flex items-center gap-3 shrink-0">
+            <Link href="/" onClick={() => onOpenChange(false)} className="inline-flex items-center gap-2">
+              <img src="/images/Glyphatic%20Orange%20Logo.png" alt="Glyphatic Logo" className="h-7 w-auto rounded-md object-contain" />
+              <span className="text-lg font-bold tracking-tight lowercase text-white">glyphatic</span>
+            </Link>
+            <span className="text-xs font-bold uppercase tracking-wider text-neutral-400 border-l border-white/20 pl-3">
+              Search
+            </span>
+          </div>
+
+          <div className="relative flex-1 max-w-4xl">
+            <input
               autoFocus
+              type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search products, resources, and more..."
-              className="h-14 pl-12 text-base"
+              className="w-full h-10 rounded-full border border-white/15 bg-[#1f1f1f] px-5 text-sm text-white placeholder:text-neutral-500 outline-none focus:border-[#FA582D] focus:ring-1 focus:ring-[#FA582D] transition-all"
+              placeholder=""
               aria-label="Search"
             />
           </div>
 
-          <div className="mt-8 max-w-3xl">
-            <p className="label-eyebrow mb-4 text-neutral-500">
+          <button
+            type="button"
+            onClick={() => onOpenChange(false)}
+            className="p-1.5 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors shrink-0"
+            aria-label="Close search"
+          >
+            <X className="h-5 w-5" />
+          </button>
+
+          {/* Results Dropdown Panel */}
+          <div className="absolute left-0 right-0 top-full mt-2 rounded-2xl bg-[#141414] border border-white/10 shadow-2xl p-6 text-white max-h-[70vh] overflow-y-auto">
+            <p className="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3">
               {query ? 'Search results' : 'Popular searches'}
             </p>
-            <ul className="divide-y divide-neutral-200">
+            <ul className="divide-y divide-white/10">
               {results.length === 0 ? (
-                <li className="py-8 text-sm text-neutral-500">
+                <li className="py-6 text-sm text-neutral-400">
                   No results found. Try a different search term.
                 </li>
               ) : (
@@ -110,23 +144,20 @@ export function SearchOverlay({ open, onOpenChange }: SearchOverlayProps) {
                       <Link
                         href={result.href}
                         onClick={() => onOpenChange(false)}
-                        className={cn(
-                          'group flex items-start gap-4 py-4 transition-colors',
-                          'hover:bg-neutral-50 -mx-4 px-4 rounded-md'
-                        )}
+                        className="group flex items-start gap-4 py-3.5 hover:bg-white/5 -mx-3 px-3 rounded-lg transition-colors"
                       >
-                        <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-brand-50 text-brand-600">
+                        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FA582D]/10 text-[#FA582D]">
                           <Icon className="h-4 w-4" />
                         </span>
                         <span className="min-w-0 flex-1">
                           <span className="flex items-center gap-2">
-                            <span className="font-medium text-neutral-900 group-hover:text-brand-500 transition-colors">
+                            <span className="font-semibold text-white group-hover:text-[#FA582D] transition-colors text-sm">
                               {result.title}
                             </span>
-                            <ArrowRight className="h-4 w-4 shrink-0 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-brand-500" />
+                            <ArrowRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-[#FA582D]" />
                           </span>
                           {result.excerpt && (
-                            <span className="mt-1 block text-sm text-neutral-500 line-clamp-2">
+                            <span className="mt-0.5 block text-xs text-neutral-400 line-clamp-1">
                               {result.excerpt}
                             </span>
                           )}
@@ -138,8 +169,9 @@ export function SearchOverlay({ open, onOpenChange }: SearchOverlayProps) {
               )}
             </ul>
           </div>
+
         </div>
-      </ModalFullscreenContent>
-    </Modal>
+      </div>
+    </div>
   )
 }

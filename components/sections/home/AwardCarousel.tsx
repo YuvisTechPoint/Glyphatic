@@ -48,7 +48,7 @@ export function AwardCarousel({ awards, className }: AwardCarouselProps) {
   }, [emblaApi])
 
   return (
-    <section className={cn('section-padding bg-base-surface', className)}>
+    <section className={cn('section-padding bg-[#111111]', className)}>
       <div className="container-wide">
         <FadeInView>
           <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
@@ -56,7 +56,7 @@ export function AwardCarousel({ awards, className }: AwardCarouselProps) {
               <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-neutral-400 mb-2">
                 ANALYST RECOGNITION
               </p>
-              <h2 className="font-display text-display-sm text-neutral-900">
+              <h2 className="font-display text-display-sm text-white">
                 Recognized industry leader
               </h2>
             </div>
@@ -66,7 +66,7 @@ export function AwardCarousel({ awards, className }: AwardCarouselProps) {
                 onClick={scrollPrev}
                 disabled={!canScrollPrev}
                 aria-label="Previous awards"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-base-border text-neutral-600 hover:border-brand-500 hover:text-brand-500 disabled:opacity-40 transition-colors"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-neutral-400 hover:border-[#FA582D] hover:text-[#FA582D] disabled:opacity-40 transition-colors"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
@@ -75,7 +75,7 @@ export function AwardCarousel({ awards, className }: AwardCarouselProps) {
                 onClick={scrollNext}
                 disabled={!canScrollNext}
                 aria-label="Next awards"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-base-border text-neutral-600 hover:border-brand-500 hover:text-brand-500 disabled:opacity-40 transition-colors"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-neutral-400 hover:border-[#FA582D] hover:text-[#FA582D] disabled:opacity-40 transition-colors"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
@@ -91,8 +91,9 @@ export function AwardCarousel({ awards, className }: AwardCarouselProps) {
                 <div
                   key={`${award.name}-${i}`}
                   className={cn(
-                    'min-w-0 shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4',
-                    'flex flex-col gap-3 rounded-lg border border-neutral-200 bg-white p-6 shadow-card hover:shadow-hover transition-shadow',
+                    'group relative min-w-0 shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4',
+                    'flex flex-col gap-3 rounded-xl border border-white/5 bg-[#1a1a1a]/40 backdrop-blur-xl p-7 transition-all duration-500 ease-out',
+                    'hover:bg-[#222222]/80 hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]',
                     'border-l-4',
                     borderColor,
                   )}
@@ -100,12 +101,12 @@ export function AwardCarousel({ awards, className }: AwardCarouselProps) {
                   <div className="flex items-center gap-3">
                     <Trophy className="h-5 w-5 text-amber-500 shrink-0" strokeWidth={1.5} />
                     {award.org && (
-                      <span className="text-[12px] font-bold text-neutral-500 uppercase tracking-wider">
+                      <span className="text-[12px] font-bold text-neutral-400 uppercase tracking-wider">
                         {award.org}
                       </span>
                     )}
                   </div>
-                  <p className="text-[14px] font-medium text-neutral-800 leading-snug">
+                  <p className="text-[14px] font-medium text-white/90 leading-snug">
                     {award.name}
                   </p>
                 </div>

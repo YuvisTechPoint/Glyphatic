@@ -20,7 +20,11 @@ function Logo({ className, variant = 'light' }: { className?: string; variant?: 
       className={cn('inline-flex items-center gap-2', className)}
       aria-label="Glyphatic home"
     >
-      <img src="/images/glyphatic-new-logo.png" alt="Glyphatic Logo" className="h-8 md:h-10 w-auto rounded-md object-contain" />
+      <img src="/images/Glyphatic%20Orange%20Logo.png" alt="Glyphatic Logo" className="h-8 md:h-10 w-auto rounded-md object-contain" />
+      <span className={cn(
+        "text-xl md:text-2xl font-bold tracking-tight lowercase",
+        variant === 'light' ? 'text-white' : 'text-neutral-900'
+      )}>glyphatic</span>
     </Link>
   )
 }
@@ -56,12 +60,10 @@ export function Header({ className }: HeaderProps) {
             <LanguageSelector />
 
             <Link
-              href="https://support.paloaltonetworks.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-1 rounded-full border border-white/40 px-4 py-1.5 text-[13px] font-medium text-white transition-colors hover:bg-white/10"
+              href="/support"
+              className="hidden md:inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2 text-[14px] font-medium text-white transition-all hover:bg-white/10 hover:border-white/40"
             >
-              Support <ChevronDown className="h-[14px] w-[14px] opacity-70" />
+              Support
             </Link>
 
             <Link

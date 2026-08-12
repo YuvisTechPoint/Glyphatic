@@ -4,10 +4,8 @@ import { AIWorldSection } from '@/components/sections/home/AIWorldSection'
 import { PlatformizationSection } from '@/components/sections/home/PlatformizationSection'
 import { PlatformTabsSection } from '@/components/sections/home/PlatformTabsSection'
 import { DefendAtScaleSection } from '@/components/sections/home/DefendAtScaleSection'
-import { Unit42Section } from '@/components/sections/home/Unit42Section'
 import { AwardCarousel } from '@/components/sections/home/AwardCarousel'
 import { TrustedByLogos } from '@/components/sections/home/TrustedByLogos'
-import { ServicesTabSection } from '@/components/sections/home/ServicesTabSection'
 import { SolutionsTabSection } from '@/components/sections/home/SolutionsTabSection'
 import { CustomerTransformationBanner } from '@/components/sections/home/CustomerTransformationBanner'
 import { CustomerVideoSection } from '@/components/sections/home/CustomerVideoSection'
@@ -32,10 +30,8 @@ export default function Home() {
       <PlatformizationSection />
       <PlatformTabsSection />
       <DefendAtScaleSection />
-      <Unit42Section />
       <TrustedByLogos title="Trusted by teams building what's next." />
       <AwardCarousel awards={GLOBAL_AWARDS} />
-      <ServicesTabSection />
       <SolutionsTabSection />
       <CustomerTransformationBanner />
       <CustomerVideoSection />

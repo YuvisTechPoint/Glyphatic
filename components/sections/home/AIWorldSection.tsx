@@ -56,27 +56,27 @@ function AnimatedCircleStat({ value, suffix, label, sublabel }: { value: number,
 
   return (
     <FadeInView className="flex flex-col items-center">
-      <div ref={ref} className="relative w-40 h-40 md:w-48 md:h-48 mb-6">
-        <svg viewBox="0 0 256 256" className="w-full h-full -rotate-90">
+      <div ref={ref} className="relative w-48 h-48 md:w-64 md:h-64 mb-8">
+        <svg viewBox="0 0 256 256" className="w-full h-full -rotate-90 drop-shadow-2xl">
           <defs>
             <linearGradient id="stat_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#FA582D"></stop>
               <stop offset="100%" stopColor="#BF3510"></stop>
             </linearGradient>
           </defs>
-          <circle cx="128" cy="128" r="110" fill="none" stroke="#404040" strokeWidth="4" />
+          <circle cx="128" cy="128" r="106" fill="rgba(250, 88, 45, 0.08)" stroke="#262626" strokeWidth="24" />
           <motion.circle 
-            cx="128" cy="128" r="110" 
-            fill="none" stroke="url(#stat_gradient)" strokeWidth="16" 
-            strokeDasharray="691.15" 
-            initial={{ strokeDashoffset: 691.15 }}
-            animate={isInView ? { strokeDashoffset: targetOffset } : { strokeDashoffset: 691.15 }}
+            cx="128" cy="128" r="106" 
+            fill="none" stroke="url(#stat_gradient)" strokeWidth="24" strokeLinecap="round"
+            strokeDasharray="666.01" 
+            initial={{ strokeDashoffset: 666.01 }}
+            animate={isInView ? { strokeDashoffset: 666.01 - (666.01 * value) / 100 } : { strokeDashoffset: 666.01 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-[2.25rem] md:text-[2.75rem] font-bold text-white tracking-tight">
-            {text} <span className="text-[1.75rem] md:text-[2.25rem]">{suffix}</span>
+          <span className="text-[3rem] md:text-[3.5rem] font-bold text-white tracking-tight drop-shadow-md">
+            {text} <span className="text-[2rem] md:text-[2.5rem]">{suffix}</span>
           </span>
         </div>
       </div>
@@ -181,10 +181,10 @@ export function AIWorldSection() {
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-8 items-center">
             <div className="w-full lg:w-5/12">
               <FadeInView delay={0.2}>
-                <span className="block text-[11px] font-bold tracking-[0.15em] text-[#FA582D] uppercase mb-4">
+                <span className="block text-[13px] md:text-[15px] font-bold tracking-[0.15em] text-[#FA582D] uppercase mb-6">
                   THE GOOD NEWS
                 </span>
-                <h3 className="text-[2rem] md:text-[2.5rem] font-medium leading-[1.2] text-white">
+                <h3 className="text-[2.5rem] md:text-[3rem] lg:text-[3.75rem] font-medium leading-[1.15] text-white">
                   AI is rapidly<br className="hidden md:block" />transforming your<br className="hidden md:block" />organization
                 </h3>
               </FadeInView>

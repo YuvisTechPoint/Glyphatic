@@ -19,7 +19,7 @@ export function MegaNav() {
 
   return (
     <nav
-      className="relative hidden lg:block"
+      className="hidden lg:block"
       aria-label="Main navigation"
       onMouseLeave={handleMenuLeave}
     >

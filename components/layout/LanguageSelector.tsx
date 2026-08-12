@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Check, Globe } from 'lucide-react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { cn } from '@/lib/utils'
@@ -9,17 +9,16 @@ type Region = {
   id: string
   label: string
   locale: string
-  active?: boolean
-  disabled?: boolean
+  googleLang: string
 }
 
 const REGIONS: Region[] = [
-  { id: 'in-en', label: 'India (English)', locale: 'en-IN', active: true },
-  { id: 'us-en', label: 'United States (English)', locale: 'en-US', disabled: true },
-  { id: 'uk-en', label: 'United Kingdom (English)', locale: 'en-GB', disabled: true },
-  { id: 'de-de', label: 'Germany (Deutsch)', locale: 'de-DE', disabled: true },
-  { id: 'jp-ja', label: 'Japan (日本語)', locale: 'ja-JP', disabled: true },
-  { id: 'au-en', label: 'Australia (English)', locale: 'en-AU', disabled: true },
+  { id: 'in-en', label: 'India (English)', locale: 'en-IN', googleLang: 'en' },
+  { id: 'us-en', label: 'United States (English)', locale: 'en-US', googleLang: 'en' },
+  { id: 'uk-en', label: 'United Kingdom (English)', locale: 'en-GB', googleLang: 'en' },
+  { id: 'de-de', label: 'Germany (Deutsch)', locale: 'de-DE', googleLang: 'de' },
+  { id: 'jp-ja', label: 'Japan (日本語)', locale: 'ja-JP', googleLang: 'ja' },
+  { id: 'au-en', label: 'Australia (English)', locale: 'en-AU', googleLang: 'en' },
 ]
 
 export interface LanguageSelectorProps {
@@ -28,7 +27,59 @@ export interface LanguageSelectorProps {
 }
 
 export function LanguageSelector({ variant = 'dropdown', className }: LanguageSelectorProps) {
-  const [selected, setSelected] = useState(REGIONS.find((r) => r.active)?.id ?? 'in-en')
+  const [selected, setSelected] = useState('in-en')
+
+  useEffect(() => {
+    // Add Google Translate script if not present
+    if (!document.getElementById('google-translate-script')) {
+      const addScript = document.createElement('script')
+      addScript.id = 'google-translate-script'
+      addScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      
+      const addInit = document.createElement('script')
+      addInit.id = 'google-translate-init'
+      addInit.innerHTML = `
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
+        }
+      `
+      
+      document.body.appendChild(addInit)
+      document.body.appendChild(addScript)
+      
+      // Add hidden div for the translate element
+      const translateDiv = document.createElement('div')
+      translateDiv.id = 'google_translate_element'
+      translateDiv.style.display = 'none'
+      document.body.appendChild(translateDiv)
+    }
+  }, [])
+
+  const handleSelect = (regionId: string) => {
+    setSelected(regionId)
+    
+    const region = REGIONS.find((r) => r.id === regionId)
+    if (!region) return
+
+    // Trigger Google Translate change
+    setTimeout(() => {
+      const selectField = document.querySelector('.goog-te-combo') as HTMLSelectElement
+      if (selectField) {
+        selectField.value = region.googleLang
+        selectField.dispatchEvent(new Event('change'))
+      }
+    }, 300)
+  }
+
+  // Hide the google translate banner via CSS
+  useEffect(() => {
+    const style = document.createElement('style')
+    style.innerHTML = `
+      body { top: 0 !important; }
+      .skiptranslate { display: none !important; }
+    `
+    document.head.appendChild(style)
+  }, [])
 
   if (variant === 'list') {
     return (
@@ -37,14 +88,11 @@ export function LanguageSelector({ variant = 'dropdown', className }: LanguageSe
           <li key={region.id}>
             <button
               type="button"
-              disabled={region.disabled}
-              onClick={() => !region.disabled && setSelected(region.id)}
+              onClick={() => handleSelect(region.id)}
               className={cn(
                 'flex w-full items-center justify-between rounded-md px-3 py-2 text-sm',
                 region.id === selected && 'bg-brand-50 text-brand-700',
-                region.disabled
-                  ? 'cursor-not-allowed text-neutral-400'
-                  : 'text-neutral-800 hover:bg-neutral-50'
+                'text-neutral-800 hover:bg-neutral-50'
               )}
             >
               {region.label}
@@ -85,11 +133,10 @@ export function LanguageSelector({ variant = 'dropdown', className }: LanguageSe
           {REGIONS.map((region) => (
             <DropdownMenu.Item
               key={region.id}
-              disabled={region.disabled}
-              onSelect={() => !region.disabled && setSelected(region.id)}
+              onSelect={() => handleSelect(region.id)}
               className={cn(
                 'flex cursor-pointer items-center justify-between rounded-md px-3 py-2 text-sm outline-none',
-                'focus:bg-neutral-50 data-[disabled]:cursor-not-allowed data-[disabled]:text-neutral-400',
+                'focus:bg-neutral-50',
                 region.id === selected && 'bg-brand-50 text-brand-700'
               )}
             >
