@@ -4,8 +4,8 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
-RUN corepack enable pnpm && pnpm install --frozen-lockfile --config.dangerously-allow-build-scripts=true
+COPY package.json pnpm-lock.yaml .npmrc ./
+RUN npm install -g pnpm@9 && pnpm install --frozen-lockfile
 
 FROM base AS builder
 WORKDIR /app
@@ -16,12 +16,7 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
-RUN \
-  if [ -f pnpm-lock.yaml ]; then \
-    corepack enable pnpm && pnpm build; \
-  else \
-    npm run build; \
-  fi
+RUN npm install -g pnpm@9 && pnpm build
 
 FROM base AS runner
 WORKDIR /app
