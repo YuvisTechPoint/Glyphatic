@@ -4,15 +4,8 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-COPY package.json package-lock.json* pnpm-lock.yaml* ./
-RUN \
-  if [ -f pnpm-lock.yaml ]; then \
-    corepack enable pnpm && pnpm install --frozen-lockfile --prod; \
-  elif [ -f package-lock.json ]; then \
-    npm ci; \
-  else \
-    npm install; \
-  fi
+COPY package.json pnpm-lock.yaml ./
+RUN corepack enable pnpm && pnpm install --frozen-lockfile
 
 FROM base AS builder
 WORKDIR /app
