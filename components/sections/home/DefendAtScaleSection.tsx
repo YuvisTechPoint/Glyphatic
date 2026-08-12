@@ -320,7 +320,7 @@ const STAT_CARDS = [
             </div>
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">002</span>
-              <span className="text-[#737373]">// main site php version 2.0</span>
+              <span className="text-[#737373]">{'// main site php version 2.0'}</span>
             </div>
             <div className="flex">
               <span className="w-6 text-white/30 text-right pr-2 select-none">003</span>
