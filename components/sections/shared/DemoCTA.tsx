@@ -15,8 +15,8 @@ interface DemoCTAProps {
 }
 
 export function DemoCTA({
- headline = 'Ready to secure your organization with AI?',
- subheadline = 'See how Palo Alto Networks platforms powered by Precision AI® can transform your security posture.',
+  headline = 'Ready to transform your business with AI?',
+  subheadline = 'See how the Glyphatic Architecture — seven divisions, one partner — can transform, automate, and operate your business.',
  primaryLabel = 'Get a demo',
  primaryHref = '/demos',
  secondaryLabel = 'Talk to sales',

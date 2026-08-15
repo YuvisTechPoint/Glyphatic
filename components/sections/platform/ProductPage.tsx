@@ -28,7 +28,7 @@ export interface Feature {
 }
 
 export interface ProductPageProps {
- /** Eyebrow label e.g. "Strata™ Network Security" */
+  /** Eyebrow label e.g. "Glyphatic AI" */
  eyebrow: string
  /** Main page title */
  title: string
@@ -156,7 +156,7 @@ export function ProductPage({
  {/* Bottom CTA */}
  <DemoCTA
  headline={ctaHeadline ?? `Ready to explore ${title}?`}
- subheadline="Talk to a Palo Alto Networks expert and see how we can help secure your organisation."
+  subheadline="Talk to a Glyphatic expert and see how we can help transform your business."
  primaryLabel={primaryCta.text}
  primaryHref={primaryCta.href}
  secondaryLabel={secondaryCta.text}

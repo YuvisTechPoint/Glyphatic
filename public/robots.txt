@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.paloaltonetworks.in
+Host: https://www.glyphatic.com
 
 # Sitemaps
-Sitemap: https://www.paloaltonetworks.in/sitemap.xml
+Sitemap: https://www.glyphatic.com/sitemap.xml

@@ -8,54 +8,54 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const PROMO_CARDS = [
- {
- image: 'https://www.paloaltonetworks.in/content/dam/pan/en_US/images/frontier/unit42_fight-ai_rec-thumbnail_180x180.jpg',
- title: 'Combat Risks from Frontier AI Models',
- cta: 'Watch on demand',
- href: '/unit42/combat-risks-frontier-ai',
- },
- {
- image: 'https://www.paloaltonetworks.in/content/dam/pan/en_US/images/pr/panw-project-potter-organic-social-1080x1080.jpg',
- title: 'Palo Alto Networks to Acquire Portkey to Secure the Rise of AI Agents',
- cta: 'Read the Press Release',
- href: '/company/press/2026/palo-alto-networks-to-acquire-portkey-to-secure-the-rise-of-ai-agents',
- },
- {
- image: 'https://www.paloaltonetworks.in/content/dam/pan/en_US/images/cortex/recommended-fight-ai-with-ai.webp',
- title: 'Fight AI with AI',
- cta: "See what's possible",
- href: '/cortex/fight-ai-with-ai',
- },
- {
- image: 'https://www.paloaltonetworks.in/content/dam/pan/en_US/images/homepage/thumbnail-introducing-prisma-airs-3-0.webp',
- title: 'Introducing Prisma AIRS 3.0',
- cta: 'Read the blog',
- href: '/blog/2026/03/prisma-airs-3-0-autonomous-ai/',
- },
- {
- image: 'https://www.paloaltonetworks.in/content/dam/pan/en_US/images/homepage/panw_tmrw-secured-OD_recommended_180x180.jpg',
- title: 'Defining the future of AI and quantum',
- cta: 'Watch now',
- href: '/tomorrow-secured',
- },
- {
- image: 'https://www.paloaltonetworks.in/content/dam/pan/en_US/images/unit42/ir-report/hero-banner-recommended-unit42.png',
- title: 'Attacks are happening 4x faster. Are you ready?',
- cta: 'Get the Unit 42 IR Report',
- href: '/resources/research/unit-42-incident-response-report',
- },
- {
- image: 'https://www.paloaltonetworks.in/content/dam/pan/en_US/images/unit42/2025/1_unit-42_mxsiam_homepage-thumbnail_180x180.jpg',
- title: 'Unit 42 MSIAM 2.0 is here: The 24/7 managed SOC.',
- cta: "See what's new",
- href: '/blog/2026/02/introducing-unit-42-managed-xsiam-2-0/',
- },
- {
- image: 'https://www.paloaltonetworks.in/content/dam/pan/en_US/images/network-security/quantum-summit-homepage-thumbnail.jpg',
- title: 'Quantum-Safe Summit: Secure today. Ready for tomorrow.',
- cta: 'Watch the summit',
- href: '/quantum-safe',
- },
+  {
+  image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop',
+  title: 'The Glyphatic Architecture — seven capabilities, one partner',
+  cta: 'Explore the ecosystem',
+  href: '/services#journey',
+  },
+  {
+  image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=400&auto=format&fit=crop',
+  title: 'AI Transformation — from AI talk to AI work',
+  cta: 'See AI services',
+  href: '/services#ai',
+  },
+  {
+  image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=400&auto=format&fit=crop',
+  title: 'Business Automation — remove the manual work',
+  cta: 'See automation',
+  href: '/services#automation',
+  },
+  {
+  image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop',
+  title: 'Mewayz — the business operating system',
+  cta: 'See Mewayz',
+  href: '/services#mewayz',
+  },
+  {
+  image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&auto=format&fit=crop',
+  title: 'Sales & revenue infrastructure that compounds',
+  cta: 'See revenue systems',
+  href: '/services#revenue',
+  },
+  {
+  image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=400&auto=format&fit=crop',
+  title: 'Marketing & growth — actual infrastructure',
+  cta: 'See growth',
+  href: '/services#growth',
+  },
+  {
+  image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400&auto=format&fit=crop',
+  title: 'BPO & managed operations — run the functions',
+  cta: 'See operations',
+  href: '/services#bpo',
+  },
+  {
+  image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=400&auto=format&fit=crop',
+  title: 'Managed services — your digital transformation partner',
+  cta: 'See managed services',
+  href: '/services#managed',
+  },
 ] as const
 
 export function PromoCarousel() {

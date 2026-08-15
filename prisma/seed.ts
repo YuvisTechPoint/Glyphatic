@@ -6,10 +6,10 @@ async function main() {
   console.log('Seeding database...')
   // Example seed data: create a default admin user if none exists
   const admin = await prisma.user.upsert({
-    where: { email: 'admin@paloaltonetworks.in' },
+    where: { email: 'admin@glyphatic.com' },
     update: {},
     create: {
-      email: 'admin@paloaltonetworks.in',
+      email: 'admin@glyphatic.com',
       name: 'System Admin',
     },
   })

@@ -13,42 +13,42 @@ type SearchResult = {
 }
 
 const MOCK_RESULTS: SearchResult[] = [
- {
- title: 'Prisma AIRS — Secure AI by Design',
- href: '/ai-security/prisma-airs',
- type: 'product',
- excerpt: 'Protect AI apps, agents, models, and data across the enterprise.',
- },
- {
- title: 'Cortex XSIAM',
- href: '/cortex/cortex-xsiam',
- type: 'product',
- excerpt: 'AI-driven security operations platform powered by unified data.',
- },
- {
- title: 'Idira — Next-Generation Identity Security',
- href: '/idira',
- type: 'product',
- excerpt: 'Secure every identity for the AI enterprise.',
- },
- {
- title: 'Unit 42 Threat Research',
- href: '/unit42',
- type: 'resource',
- excerpt: 'World-renowned threat intelligence and incident response.',
- },
- {
- title: 'Network Security Platform',
- href: '/network-security',
- type: 'page',
- excerpt: 'Strata Network Security Platform powered by Precision AI.',
- },
- {
- title: 'Cyberpedia',
- href: '/cyberpedia',
- type: 'resource',
- excerpt: 'Your cybersecurity encyclopedia — definitions and guides.',
- },
+  {
+  title: 'The Glyphatic Architecture',
+  href: '/services',
+  type: 'page',
+  excerpt: 'Seven integrated divisions — Strategy, AI, Systems, Growth, Authority, Operations, Intelligence.',
+  },
+  {
+  title: 'AI Transformation',
+  href: '/services#ai',
+  type: 'product',
+  excerpt: 'AI assistants, copilots, workflow automation, and workforce transformation.',
+  },
+  {
+  title: 'Business Automation',
+  href: '/services#automation',
+  type: 'product',
+  excerpt: 'Process and CRM automation that removes manual work.',
+  },
+  {
+  title: 'Mewayz — Business Operating System',
+  href: '/services#mewayz',
+  type: 'product',
+  excerpt: 'Deploy, configure, and manage your entire operating layer.',
+  },
+  {
+  title: 'Business Process Outsourcing',
+  href: '/services#bpo',
+  type: 'resource',
+  excerpt: 'Customer operations, sales BPO, back office, finance, and HR.',
+  },
+  {
+  title: 'The Ultimate Client Journey',
+  href: '/services#journey',
+  type: 'resource',
+  excerpt: 'Diagnose → Strategize → Transform → Automate → Implement → Operate → Optimize → Scale.',
+  },
 ]
 
 const typeIcons = {

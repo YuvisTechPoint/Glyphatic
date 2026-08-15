@@ -8,37 +8,37 @@ import { ResourceCard } from '@/components/sections/shared/ResourceCard'
 import { FadeInView } from '@/components/animations/FadeInView'
 
 const PERSPECTIVE_CARDS = [
- {
- category: 'CASE STUDY',
- title:
- 'Why We Rewrote Our Client\'s Payment Service in Rust',
- href: '/case-studies/rust-payment-service',
- imageAlt: 'Rust code on screen',
- imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop'
- },
- {
- category: 'ARCHITECTURE',
- title: 'eBPF for Dummies: High-Performance Networking',
- href: '/blog/ebpf-for-dummies',
- imageAlt: 'Network nodes',
- imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop'
- },
- {
- category: 'INDUSTRY INSIGHT',
- title:
- 'The True Cost of Offshore Engineering in 2026',
- href: '/blog/true-cost-offshore-engineering',
- imageAlt: 'Business graphs',
- imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop'
- },
- {
- category: 'OPEN SOURCE',
- title:
- 'Introducing Go-Migrate: Our Open-Source Tool for Zero-Downtime Data Migrations',
- href: '/open-source/go-migrate',
- imageAlt: 'Terminal output',
- imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop'
- },
+  {
+  category: 'ARCHITECTURE',
+  title:
+  'The Glyphatic Architecture: Seven Capabilities, One Partner',
+  href: '/services',
+  imageAlt: 'Transformation architecture diagram',
+  imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop'
+  },
+  {
+  category: 'AI',
+  title: 'AI Transformation Is a Workforce Problem, Not a Technology Problem',
+  href: '/services#ai',
+  imageAlt: 'AI and people working together',
+  imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop'
+  },
+  {
+  category: 'SYSTEMS',
+  title:
+  'Automation Is Not a Feature. It Is the Operating Layer.',
+  href: '/services#automation',
+  imageAlt: 'Automation workflows',
+  imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop'
+  },
+  {
+  category: 'PLATFORM',
+  title:
+  'Mewayz Is Not Software. It Is a Business Operating System.',
+  href: '/services#mewayz',
+  imageAlt: 'Business operating system dashboard',
+  imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop'
+  },
 ] as const
 
 export function PerspectivesCarousel() {

@@ -35,8 +35,8 @@ const TABS: { id: Persona; label: string; cards: EngageCard[] }[] = [
  id: 'infrastructure',
  title: 'Cloud-Native Infrastructure',
  description: 'Leveraging Kubernetes, AWS, and GCP to ensure high availability and zero-downtime deployments for mission-critical applications.',
- cta: 'Explore Cloud Services',
- href: '/services/cloud-infrastructure',
+  cta: 'Explore Cloud Services',
+  href: '/services#infrastructure',
  image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop',
  }
  ]
@@ -57,8 +57,8 @@ const TABS: { id: Persona; label: string; cards: EngageCard[] }[] = [
  id: 'direct-access',
  title: 'Direct Access',
  description: 'You communicate directly with the engineers building your product. No account managers playing telephone with your requirements.',
- cta: 'Talk to an Engineer',
- href: '/contact-us',
+  cta: 'Talk to an Engineer',
+  href: '/discuss-architecture',
  image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop',
  }
  ]
@@ -71,8 +71,8 @@ const TABS: { id: Persona; label: string; cards: EngageCard[] }[] = [
  id: 'sprints',
  title: 'Predictable Velocity',
  description: 'We work in transparent, two-week sprints with clear deliverables, ensuring you always know exactly what you are paying for.',
- cta: 'See Our Process',
- href: '/why-us#deliverables',
+  cta: 'See Our Process',
+  href: '/services#journey',
  image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
  },
  {
@@ -93,16 +93,16 @@ const TABS: { id: Persona; label: string; cards: EngageCard[] }[] = [
  id: 'documentation',
  title: 'Immaculate Documentation',
  description: 'We leave your internal teams with comprehensive documentation, runbooks, and architecture decision records (ADRs).',
- cta: 'View Sample Docs',
- href: '/open-source',
+  cta: 'View Sample Docs',
+  href: '/resources/architecture-patterns',
  image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop',
  },
  {
  id: 'training',
  title: 'Team Enablement',
  description: 'We don\'t just throw code over the wall. We actively train your engineers on the systems we\'ve built for a seamless handoff.',
- cta: 'Learn About Handoff',
- href: '/why-us#handoff',
+  cta: 'Learn About Handoff',
+  href: '/services#journey',
  image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop',
  }
  ]

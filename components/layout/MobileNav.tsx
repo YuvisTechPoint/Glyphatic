@@ -123,14 +123,12 @@ export function MobileNav({ open, onOpenChange, onSearchOpen }: MobileNavProps) 
  </div>
  )}
 
- <Link
- href="https://support.paloaltonetworks.com"
- target="_blank"
- rel="noopener noreferrer"
- className="text-center text-sm font-medium text-neutral-700 py-2"
- >
- Support
- </Link>
+  <Link
+  href="/support"
+  className="text-center text-sm font-medium text-neutral-700 py-2"
+  >
+  Support
+  </Link>
 
  <Button variant="primary" size="md" className="w-full" href="/get-started">
  Demos and Trials

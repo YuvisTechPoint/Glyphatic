@@ -129,7 +129,7 @@ export function DemoForm() {
  
  <p className="text-center text-body-sm text-neutral-500">
  By submitting this form, you agree to our{' '}
- <a href="/legal-notices/privacy" className="underline hover:text-neutral-900">
+  <a href="/legal/privacy" className="underline hover:text-neutral-900">
  Privacy Policy
  </a>
  .

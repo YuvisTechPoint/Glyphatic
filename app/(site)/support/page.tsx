@@ -28,7 +28,7 @@ const SUPPORT_RESOURCES = [
  icon: Users,
  title: 'Community & Open Source',
  description: 'Join our developer community to discuss best practices, scalable systems, and open-source contributions.',
- href: '/open-source',
+  href: '/resources/architecture-patterns',
  linkText: 'Join community',
  },
  {
