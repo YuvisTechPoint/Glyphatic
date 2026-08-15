@@ -46,11 +46,11 @@ export function FounderQuoteSection() {
                   "
                 </span>
                 <blockquote className="relative z-10 text-[1.5rem] md:text-[2rem] lg:text-[2.25rem] font-display font-medium text-neutral-900 leading-[1.3] tracking-tight">
-                  <span className="text-neutral-600">Every consultant I've ever met loves the beginning of a transformation — the strategy sessions, the whiteboards, the big presentations.</span>
+                  <span className="text-neutral-600">Every consultant I've ever met is brilliant at the before — the strategy session, the whiteboard, the packed room.</span>
                   <br /><br />
-                  But transformation isn't won in boardrooms. It's won at 9 AM on a Tuesday, three months after go-live, when the new system has to actually work for the person using it.
+                  But transformation doesn't die in the boardroom. It dies on a quiet Tuesday, three months after go-live, when the new system has to work for the person actually using it.
                   <br /><br />
-                  <span className="text-[#0F4C81]">That's the moment most firms aren't there for. That's the moment we built Glyphatic for.</span>
+                  <span className="text-[#0F4C81]">Most firms aren't there for that Tuesday. That's the only day we built Glyphatic for. We don't sell transformations. We take the shift.</span>
                 </blockquote>
               </div>
               
@@ -61,7 +61,7 @@ export function FounderQuoteSection() {
                   <div className="w-1.5 h-1.5 rounded-full bg-black/20" />
                 </div>
                 <p className="text-xs text-neutral-500 uppercase tracking-widest font-bold">
-                  We don't just design transformations. We operate them.
+                  We don't sell the transformation. We operate the outcome.
                 </p>
               </div>
             </FadeInView>

@@ -651,7 +651,7 @@ export const CLIENT_JOURNEY = [
 
 export const POSITIONING = {
   line: 'AI-Native Business Transformation, Technology & Operations',
-  promise: 'We transform, automate, modernize, and operate businesses for the AI era.',
+  promise: 'Built for the AI era. Operated end to end.',
   old: 'Tell us what digital service you need.',
   new: 'Give us the business problem. We\u2019ll diagnose it, design the transformation, implement the technology, automate the workflows, operate the required functions, and continuously optimize the system.',
 }

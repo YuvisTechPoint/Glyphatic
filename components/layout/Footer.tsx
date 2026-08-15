@@ -9,7 +9,7 @@ import {
  FOOTER_POPULAR,
  FOOTER_LEGAL,
 } from '@/lib/nav-data'
-import { COPYRIGHT_YEAR, SITE_NAME, SOCIAL_LINKS } from '@/lib/constants'
+import { COPYRIGHT_YEAR, SITE_NAME, SOCIAL_LINKS, ADDRESS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -70,22 +70,29 @@ export function Footer({ className }: FooterProps) {
  )}
  </div>
 
- {/* Company */}
- <div className="lg:col-span-2">
- <h3 className="label-eyebrow mb-6 text-neutral-500">Company</h3>
- <ul className="space-y-2">
- {FOOTER_COMPANY.map((link) => (
- <li key={link.href}>
-  <Link
-  href={link.href}
-  className="text-body-sm text-neutral-600 hover:text-neutral-900 transition-colors"
-  >
- {link.label}
- </Link>
- </li>
- ))}
- </ul>
- </div>
+  {/* Company */}
+  <div className="lg:col-span-2">
+  <h3 className="label-eyebrow mb-6 text-neutral-500">Company</h3>
+  <ul className="space-y-2">
+  {FOOTER_COMPANY.map((link) => (
+  <li key={link.href}>
+   <Link
+   href={link.href}
+   className="text-body-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+   >
+  {link.label}
+  </Link>
+  </li>
+  ))}
+  </ul>
+  <h3 className="label-eyebrow mb-2 mt-8 text-neutral-500">Office</h3>
+  <address className="text-body-sm not-italic leading-relaxed text-neutral-600">
+  {ADDRESS.building}, {ADDRESS.block},<br />
+  {ADDRESS.floors}, {ADDRESS.locality},<br />
+  {ADDRESS.city} – {ADDRESS.pincode},<br />
+  {ADDRESS.state}, India
+  </address>
+  </div>
 
  {/* Popular Links */}
  <div className="lg:col-span-3">

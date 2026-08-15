@@ -35,14 +35,15 @@ export function HeroVideoSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
         >
-          We transform, automate, modernize,
-          <span className="text-[#0F4C81]"> and operate</span> businesses for the AI era.
+          We don&apos;t just transform businesses.
+          <span className="text-[#0F4C81]"> We run them.</span>
         </motion.h1>
 
         <FadeInView delay={0.2}>
           <p className="mt-6 max-w-[650px] text-[1.125rem] md:text-[1.25rem] font-medium leading-[1.6] text-neutral-600">
             Seven integrated divisions — Strategy, AI, Systems, Growth, Authority,
-            Operations, and Intelligence. One transformation partner, end to end.
+            Operations, Intelligence. One team owns the outcome, from the first
+            diagnosis to the daily operation.
           </p>
         </FadeInView>
 

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import { ArrowRight, Mail, Clock } from 'lucide-react'
+import { ArrowRight, Mail, Clock, MapPin } from 'lucide-react'
 import { ContactSalesForm } from '@/components/forms/ContactSalesForm'
 import { POSITIONING } from '@/lib/services-data'
+import { ADDRESS } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Discuss Architecture | Glyphatic',
@@ -43,6 +44,14 @@ export default function DiscussArchitecturePage() {
               <div className="flex items-center gap-3 text-neutral-700">
                 <Clock className="h-5 w-5 text-[#0F4C81]" />
                 We respond within one business day.
+              </div>
+              <div className="flex items-start gap-3 text-neutral-700">
+                <MapPin className="h-5 w-5 shrink-0 text-[#0F4C81]" />
+                <span className="leading-relaxed">
+                  {ADDRESS.building}, {ADDRESS.block}, {ADDRESS.floors},<br />
+                  {ADDRESS.locality},<br />
+                  {ADDRESS.city} – {ADDRESS.pincode}, {ADDRESS.state}, India
+                </span>
               </div>
             </div>
             <div className="mt-8 border-t border-black/10 pt-6">

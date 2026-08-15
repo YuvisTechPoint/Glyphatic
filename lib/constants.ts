@@ -1,5 +1,5 @@
 export const SITE_NAME = 'Glyphatic'
-export const SITE_TAGLINE = 'We transform, automate, modernize, and operate businesses for the AI era.'
+export const SITE_TAGLINE = 'Built for the AI era. Operated end to end.'
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.glyphatic.com'
 export const LOCALE = process.env.NEXT_PUBLIC_LOCALE || 'en-IN'
 export const COPYRIGHT_YEAR = 2026
@@ -22,6 +22,17 @@ export const CEO = {
   title: 'Founder & CEO',
   image: '/images/ceo-debanjan-sandhaki.jpg',
 }
+
+export const ADDRESS = {
+  building: 'Ecospace Business Park',
+  block: 'Block 4A',
+  floors: '3rd & 5th Floor',
+  locality: 'Action Area II, New Town, Rajarhat',
+  city: 'Kolkata',
+  pincode: '700156',
+  state: 'West Bengal',
+  full: 'Ecospace Business Park, Block 4A, 3rd & 5th Floor, Action Area II, New Town, Rajarhat, Kolkata – 700156, West Bengal, India',
+} as const
 
 export const STATS = {
   aiGrowth: { value: 78, suffix: '%', label: 'growth in AI adoption across enterprises' },
