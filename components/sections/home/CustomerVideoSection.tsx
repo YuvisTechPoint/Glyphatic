@@ -52,7 +52,7 @@ export function CustomerVideoSection() {
  <FadeInView>
  {/* Testimonial Card */}
  <div 
- className="relative rounded-2xl bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] p-10 md:p-16 overflow-hidden min-h-[400px] flex flex-col justify-center bg-cover bg-center"
+  className="relative rounded-2xl bg-gradient-to-br from-white via-brand-50 to-brand-100 p-10 md:p-16 overflow-hidden min-h-[400px] flex flex-col justify-center bg-cover bg-center"
  style={{
  backgroundImage: 'url("https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&auto=format&fit=crop")'
  }}
@@ -62,7 +62,7 @@ export function CustomerVideoSection() {
  <div className="absolute top-8 right-8 opacity-20">
  <Quote className="w-32 h-32 text-neutral-900" strokeWidth={1} />
  </div>
- <div className="absolute bottom-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#FA582D]/10 to-transparent" />
+ <div className="absolute bottom-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#0F4C81]/10 to-transparent" />
 
  <AnimatePresence mode="wait">
  <motion.div
@@ -117,7 +117,7 @@ export function CustomerVideoSection() {
  onClick={() => setCurrent(i)}
  aria-label={`Go to testimonial ${i + 1}`}
  className={`h-1.5 rounded-full transition-all ${
- i === current ? 'w-8 bg-[#FA582D]' : 'w-4 bg-white/30 hover:bg-black/50'
+  i === current ? 'w-8 bg-[#0F4C81]' : 'w-4 bg-black/20 hover:bg-black/40'
  }`}
  />
  ))}

@@ -31,11 +31,11 @@ export default function LeadershipPage() {
  
  <FadeInView>
  <div className="max-w-3xl mb-16">
- <span className="block text-xs font-bold tracking-[0.15em] text-[#FA582D] uppercase mb-4">
+ <span className="block text-xs font-bold tracking-[0.15em] text-[#0F4C81] uppercase mb-4">
  GLYPHATIC LEADERSHIP
  </span>
  <h1 className="text-[3rem] md:text-[4rem] font-display font-bold tracking-tight leading-[1.1] mb-6">
- The architects of <span className="text-[#FA582D]">transformation.</span>
+ The architects of <span className="text-[#0F4C81]">transformation.</span>
  </h1>
  <p className="text-[1.125rem] text-neutral-600 font-medium leading-relaxed">
  Our leadership team brings together deep expertise across strategy, artificial intelligence, enterprise systems, and managed operations.
@@ -46,7 +46,7 @@ export default function LeadershipPage() {
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
  {LEADERS.map((leader, idx) => (
  <FadeInView key={leader.name} delay={idx * 0.1}>
- <div className="group rounded-2xl border border-black/10 bg-white overflow-hidden shadow-lg hover:border-[#FA582D]/30 hover:shadow-2xl transition-all">
+ <div className="group rounded-2xl border border-black/10 bg-white overflow-hidden shadow-lg hover:border-[#0F4C81]/30 hover:shadow-2xl transition-all">
  <div className="aspect-[4/5] overflow-hidden relative">
  {/* eslint-disable-next-line @next/next/no-img-element */}
  <img 
@@ -60,11 +60,11 @@ export default function LeadershipPage() {
  <div className="p-8">
  <div className="flex items-center justify-between mb-2">
  <h3 className="text-2xl font-bold text-neutral-900">{leader.name}</h3>
- <a href={leader.linkedin} className="text-neutral-500 hover:text-[#FA582D] transition-colors" aria-label={`${leader.name} LinkedIn`}>
+ <a href={leader.linkedin} className="text-neutral-500 hover:text-[#0F4C81] transition-colors" aria-label={`${leader.name} LinkedIn`}>
  <Linkedin className="w-5 h-5" />
  </a>
  </div>
- <p className="text-sm font-bold text-[#FA582D] uppercase tracking-wider mb-4">
+ <p className="text-sm font-bold text-[#0F4C81] uppercase tracking-wider mb-4">
  {leader.title}
  </p>
  <p className="text-sm text-neutral-600 leading-relaxed">

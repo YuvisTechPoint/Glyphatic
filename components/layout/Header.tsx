@@ -34,13 +34,14 @@ export function Header({ className }: HeaderProps) {
  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
  return (
- <>
- <header
- className={cn(
- 'absolute top-0 z-[100] w-full h-[60px] lg:h-[74px] bg-transparent border-b border-black/10',
- className
- )}
- >
+  <>
+  <div className="absolute top-0 z-[101] h-[3px] w-full bg-gradient-to-r from-[#0F4C81] via-[#C9A227] to-[#0F4C81]" aria-hidden />
+  <header
+  className={cn(
+  'absolute top-0 z-[100] w-full h-[60px] lg:h-[74px] bg-transparent border-b border-black/10',
+  className
+  )}
+  >
  <div className="container-wide flex h-full items-center justify-between gap-4">
  <div className="flex items-center gap-6 lg:gap-10">
  <Logo className="shrink-0" variant="light" />
@@ -68,7 +69,7 @@ export function Header({ className }: HeaderProps) {
 
  <Link
  href="/get-started"
- className="hidden sm:inline-flex items-center justify-center rounded-full bg-[#FA582D] px-5 py-2 text-[14px] font-semibold text-black transition-colors hover:bg-[#E0431A]"
+  className="hidden sm:inline-flex items-center justify-center rounded-full bg-[#0F4C81] px-5 py-2 text-[14px] font-semibold text-white transition-colors hover:bg-[#0B3A66]"
  >
  Demos and Trials
  </Link>

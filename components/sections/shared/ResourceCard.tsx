@@ -43,8 +43,8 @@ export function ResourceCard({
  className="h-full w-full object-cover"
  />
  ) : (
- <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] relative overflow-hidden">
- <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(250,88,45,0.4) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(41,98,255,0.3) 0%, transparent 50%)' }} />
+  <div className="flex h-full items-center justify-center bg-gradient-to-br from-brand-50 via-white to-brand-100 relative overflow-hidden">
+ <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(15,76,129,0.4) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(41,98,255,0.3) 0%, transparent 50%)' }} />
  <span className="relative z-10 text-[11px] font-bold uppercase tracking-[0.15em] text-neutral-900/60">{category}</span>
  </div>
  )}

@@ -15,9 +15,9 @@
     --text-inverse: #ffffff;
     --text-inverse-muted: #a3a3aa;
 
-    --brand-primary: #fa582d;
-    --brand-hover: #e0431a;
-    --accent-teal: #8ad3de;
+    --brand-primary: #0f4c81;
+    --brand-hover: #0b3a66;
+    --accent-teal: #c9a227;
 
     --border-default: #e5e5e7;
     --border-dark: #26272b;
@@ -54,7 +54,7 @@
   }
 
   .text-gradient-brand {
-    background: linear-gradient(120deg, #fa582d, #ff9868);
+    background: linear-gradient(120deg, #0f4c81, #5b87b2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -49,7 +49,7 @@ export function PlatformHero({
  </div>
  
  {visual && (
- <div className="relative h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden bg-[#0B1120] border border-slate-800 shadow-2xl">
+  <div className="relative h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden bg-gray-50 border border-black/10 shadow-2xl">
  {visual}
  </div>
  )}

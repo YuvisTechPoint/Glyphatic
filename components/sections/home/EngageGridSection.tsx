@@ -121,13 +121,13 @@ export function EngageGridSection() {
  <div className="mb-12">
  {/* Orange graphic line matching screenshot */}
  <div className="flex items-center mb-8 opacity-80">
- <div className="h-6 w-[1px] bg-[#FA582D]" />
- <div className="h-[1px] w-[260px] bg-[#FA582D]" />
+ <div className="h-6 w-[1px] bg-[#0F4C81]" />
+ <div className="h-[1px] w-[260px] bg-[#0F4C81]" />
  </div>
 
  <h2 className="font-display text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] font-medium leading-[1.1] text-neutral-900 tracking-tight">
  Why Glyphatic?<br />
- We'll Give You <span className="text-[#FA582D]">Four Specific Reasons.</span>
+ We'll Give You <span className="text-[#0F4C81]">Four Specific Reasons.</span>
  </h2>
  </div>
  </FadeInView>
@@ -142,7 +142,7 @@ export function EngageGridSection() {
  className={cn(
  'relative rounded-full px-8 py-3 text-[16px] font-bold transition-colors whitespace-nowrap',
  activeTab === tab.id
- ? 'bg-[#FA582D] text-[#111111]'
+  ? 'bg-[#0F4C81] text-white'
  : 'text-neutral-900 hover:bg-black/5'
  )}
  >
@@ -187,7 +187,7 @@ export function EngageGridSection() {
  </p>
  <Link
  href={card.href}
- className="group/link inline-flex items-center gap-2 text-[15px] font-bold text-[#FA582D] transition-colors"
+ className="group/link inline-flex items-center gap-2 text-[15px] font-bold text-[#0F4C81] transition-colors"
  >
  {card.cta}
  <ArrowRight className="h-5 w-5 transition-transform group-hover/link:translate-x-1" strokeWidth={2} />

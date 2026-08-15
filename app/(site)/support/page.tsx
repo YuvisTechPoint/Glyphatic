@@ -45,7 +45,7 @@ export default function SupportPage() {
  <main className="min-h-screen bg-white pt-24 pb-32">
  {/* Hero Section */}
  <section className="relative overflow-hidden py-16 lg:py-24 border-b border-black/5">
- <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(250,88,45,0.1)_0%,_transparent_50%)] pointer-events-none" />
+ <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(15,76,129,0.1)_0%,_transparent_50%)] pointer-events-none" />
  <div className="container-wide relative z-10">
  <FadeInView>
  <h1 className="text-[3rem] lg:text-[4rem] font-display font-bold text-neutral-900 tracking-tight mb-6">
@@ -68,7 +68,7 @@ export default function SupportPage() {
  key={i}
  className="group relative flex flex-col rounded-2xl border border-black/10 bg-gray-50 p-8 lg:p-10 transition-all hover:bg-white hover:border-black/20"
  >
- <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FA582D]/10 text-[#FA582D]">
+ <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0F4C81]/10 text-[#0F4C81]">
  <resource.icon className="h-6 w-6" />
  </div>
  <h3 className="text-2xl font-bold text-neutral-900 mb-3 tracking-tight">
@@ -79,7 +79,7 @@ export default function SupportPage() {
  </p>
  <Link 
  href={resource.href}
- className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#FA582D] transition-colors group-hover:text-neutral-900"
+ className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#0F4C81] transition-colors group-hover:text-neutral-900"
  >
  {resource.linkText} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
  </Link>
@@ -94,7 +94,7 @@ export default function SupportPage() {
  <section className="py-16" id="ticket">
  <div className="container-wide">
  <FadeInView delay={0.4}>
- <div className="rounded-3xl border border-black/10 bg-gradient-to-br from-[#1a1a1a] to-[#111111] p-8 lg:p-16 text-center">
+  <div className="rounded-3xl border border-black/10 bg-gradient-to-br from-brand-50 via-white to-brand-100 p-8 lg:p-16 text-center">
  <h2 className="text-3xl font-display font-bold text-neutral-900 mb-4">
  Need Priority Assistance?
  </h2>
@@ -103,7 +103,7 @@ export default function SupportPage() {
  </p>
  <Link
  href="mailto:support@glyphaticsystems.com"
- className="inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-[15px] font-bold text-black transition-colors hover:bg-neutral-200"
+  className="inline-flex h-12 items-center justify-center rounded-full bg-[#0F4C81] px-8 text-[15px] font-bold text-white transition-colors hover:bg-[#0B3A66]"
  >
  Email Support Team
  </Link>

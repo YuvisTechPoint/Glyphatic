@@ -30,7 +30,7 @@ export interface FooterProps {
 
 export function Footer({ className }: FooterProps) {
  const [email, setEmail] = useState('')
- const productsMenu = MEGA_NAV.find((m) => m.id === 'products')
+  const productsMenu = MEGA_NAV.find((m) => m.id === 'services')
 
  const handleNewsletter = (e: FormEvent) => {
  e.preventDefault()
@@ -76,12 +76,10 @@ export function Footer({ className }: FooterProps) {
  <ul className="space-y-2">
  {FOOTER_COMPANY.map((link) => (
  <li key={link.href}>
- <Link
- href={link.href}
- target={link.external ? '_blank' : undefined}
- rel={link.external ? 'noopener noreferrer' : undefined}
- className="text-body-sm text-neutral-600 hover:text-neutral-900 transition-colors"
- >
+  <Link
+  href={link.href}
+  className="text-body-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+  >
  {link.label}
  </Link>
  </li>
@@ -135,7 +133,7 @@ export function Footer({ className }: FooterProps) {
  href={SOCIAL_LINKS.youtube}
  target="_blank"
  rel="noopener noreferrer"
- className="text-neutral-600 hover:text-[#FA582D] transition-colors"
+ className="text-neutral-600 hover:text-[#0F4C81] transition-colors"
  aria-label="YouTube"
  >
  <Youtube className="h-4 w-4" />
@@ -144,7 +142,7 @@ export function Footer({ className }: FooterProps) {
  href={SOCIAL_LINKS.podcast}
  target="_blank"
  rel="noopener noreferrer"
- className="text-neutral-600 hover:text-[#FA582D] transition-colors"
+ className="text-neutral-600 hover:text-[#0F4C81] transition-colors"
  aria-label="Podcast"
  >
  <Podcast className="h-4 w-4" />
@@ -153,7 +151,7 @@ export function Footer({ className }: FooterProps) {
  href={SOCIAL_LINKS.facebook}
  target="_blank"
  rel="noopener noreferrer"
- className="text-neutral-600 hover:text-[#FA582D] transition-colors"
+ className="text-neutral-600 hover:text-[#0F4C81] transition-colors"
  aria-label="Facebook"
  >
  <Facebook className="h-4 w-4" />
@@ -162,7 +160,7 @@ export function Footer({ className }: FooterProps) {
  href={SOCIAL_LINKS.linkedin}
  target="_blank"
  rel="noopener noreferrer"
- className="text-neutral-600 hover:text-[#FA582D] transition-colors"
+ className="text-neutral-600 hover:text-[#0F4C81] transition-colors"
  aria-label="LinkedIn"
  >
  <Linkedin className="h-4 w-4" />
@@ -171,7 +169,7 @@ export function Footer({ className }: FooterProps) {
  href={SOCIAL_LINKS.twitter}
  target="_blank"
  rel="noopener noreferrer"
- className="text-neutral-600 hover:text-[#FA582D] transition-colors"
+ className="text-neutral-600 hover:text-[#0F4C81] transition-colors"
  aria-label="X (Twitter)"
  >
  <XIcon className="h-4 w-4" />

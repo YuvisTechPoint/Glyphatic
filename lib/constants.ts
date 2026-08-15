@@ -1,62 +1,48 @@
 export const SITE_NAME = 'Glyphatic'
-export const SITE_TAGLINE = 'The Global Cybersecurity Leader'
+export const SITE_TAGLINE = "We don't just design transformations. We operate them."
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.glyphatic.com'
 export const LOCALE = process.env.NEXT_PUBLIC_LOCALE || 'en-IN'
 export const COPYRIGHT_YEAR = 2026
 
 export const SOCIAL_LINKS = {
-  youtube: 'https://www.youtube.com/user/paloaltonetworks',
-  facebook: 'https://www.facebook.com/PaloAltoNetworks/',
-  linkedin: 'https://www.linkedin.com/company/palo-alto-networks',
-  twitter: 'https://twitter.com/PaloAltoNtwks',
-  podcast: 'https://www.paloaltonetworks.in/podcasts/threat-vector',
+  youtube: 'https://www.youtube.com/@GlyphaticSystems',
+  facebook: 'https://www.facebook.com/GlyphaticSystems',
+  linkedin: 'https://www.linkedin.com/company/glyphatic',
+  twitter: 'https://twitter.com/GlyphaticHQ',
+  podcast: 'https://www.glyphatic.com/podcasts',
 } as const
 
 export const MISSION =
-  'We are the global cybersecurity leader. Our mission is to protect our way of life in the digital age by preventing successful cyberattacks.'
+  'We transform, automate, modernize, and operate businesses for the AI era. Seven integrated divisions — Strategy, AI, Systems, Growth, Authority, Operations, and Intelligence — delivering end-to-end business transformation.'
+
+export const CEO = {
+  name: 'Debanjan Sandhaki',
+  title: 'Founder & CEO',
+  image: '/images/ceo-debanjan-sandhaki.jpg',
+}
 
 export const STATS = {
-  aiGrowth: { value: 78, suffix: '%', label: '~1.5X growth in usage in last 12 months' },
-  genAiEnterprises: { value: 94, suffix: '%', label: 'development enterprises using gen AI software' },
-  zeroDays: { value: 56, suffix: '%', label: 'INCREASE IN EXPLOITED ZERO DAYS (YoY, 2023)' },
-  ransomware: { value: 73, suffix: '%', label: 'INCREASE IN RANSOMWARE ATTACKS (YoY, 2023)' },
-  breaches: { value: 56, suffix: '%', label: 'INCREASE IN DATA BREACHES AND LEAKS (YoY, 2023)' },
-  mttr: { value: 90, suffix: '%', label: 'reduction in MTTR' },
-  attacksBlocked: { value: 30.9, suffix: 'B', label: 'inline attacks blocked per day', decimals: 1 },
-  endpointsScanned: { value: 480, suffix: 'B', label: 'endpoints scanned daily' },
-  fortune100: { value: 95, suffix: '%', label: 'of the Fortune 100' },
-  networkCustomers: { value: 70, suffix: 'K', label: 'Customers' },
-  networkLeader: { value: 13, suffix: 'x', label: 'network security leader' },
-  partnerIntegrations: { value: 700, suffix: '+', label: 'partner integrations' },
-  secopsLeader: { value: 15, suffix: 'x', label: 'Leader from Code to Cloud to SOC' },
-  cloudRiskReduction: { value: 90, suffix: '%', label: 'risk reduction with shift left' },
-  alertReduction: { value: 25, suffix: 'x', label: 'reduction in alerts & remediation workflows' },
-  idiraCustomers: { value: 10, suffix: 'K', label: 'Customers' },
-  fortune500: { value: 55, suffix: '%', label: 'OF THE FORTUNE 500' },
-  unit42Matters: { value: 1, suffix: 'K+', label: 'MATTERS PER YEAR' },
-  researchers: { value: 200, suffix: '+', label: 'threat researchers' },
-  malwareSamples: { value: 30, suffix: 'M', label: 'malware samples analyzed per day' },
-  irEngagements: { value: 1, suffix: 'K+', label: 'incident response engagements a year' },
-  lawFirms: { value: 150, suffix: '+', label: 'trusted partner of law firms' },
+  aiGrowth: { value: 78, suffix: '%', label: 'growth in AI adoption across enterprises' },
+  genAiEnterprises: { value: 94, suffix: '%', label: 'enterprises using AI software in operations' },
+  transformationFail: { value: 70, suffix: '%', label: 'digital transformations that fail to reach goals' },
+  techFrustration: { value: 63, suffix: '%', label: 'executives frustrated with fragmented tech stacks' },
+  productivityLoss: { value: 45, suffix: '%', label: 'productivity loss due to poor system adoption' },
+  manualReduction: { value: 80, suffix: '%', label: 'reduction in manual processes' },
+  transformationSpeed: { value: 3.5, suffix: 'x', label: 'faster digital transformation', decimals: 1 },
+  operationalSupport: { value: 24, suffix: '/7', label: 'managed operational support' },
+  divisions: { value: 7, suffix: '', label: 'integrated divisions' },
+  services: { value: 74, suffix: '+', label: 'services across the portfolio' },
+  journeySteps: { value: 8, suffix: '', label: 'step client journey' },
+  industries: { value: 15, suffix: '+', label: 'industries served' },
 } as const
 
 export const CUSTOMER_LOGOS = {
-  network: ['Westfield', 'TriHealth', 'Village Roadshow', 'US Signals', 'Salesforce'],
-  secops: ['Infosys', 'Schlumberger', 'Grupo Bimbo', 'Better', 'Toyota'],
-  identity: ['Carnival Corporation', 'Maximus', 'Northern Trust', 'Transgourmet', 'Panasonic'],
-  unit42: ['Colgate', 'Grant Thornton', 'Invest Bank', 'Sabre', 'ADT'],
-  customers: [
-    'Resolution Life',
-    'Better',
-    'Dish',
-    'Salesforce',
-    "Caesar's",
-    'Flex',
-    'AutoNation',
-    "Aaron's",
-    'Pfizer',
-    'NBC Universal',
-    'Schlumberger',
-    'Grupo Bimbo',
-  ],
+  advisory: ['Enterprise A', 'TechCorp', 'GlobalFin', 'HealthPlus', 'RetailX'],
+  ai: ['TechCorp', 'Enterprise A', 'GlobalFin', 'HealthPlus', 'RetailX'],
+  systems: ['GlobalFin', 'RetailX', 'TechCorp', 'Enterprise A', 'HealthPlus'],
+  growth: ['HealthPlus', 'GlobalFin', 'RetailX', 'TechCorp', 'Enterprise A'],
+  authority: ['TechCorp', 'Enterprise A', 'GlobalFin', 'HealthPlus', 'RetailX'],
+  operations: ['HealthPlus', 'GlobalFin', 'RetailX', 'TechCorp', 'Enterprise A'],
+  intelligence: ['Enterprise A', 'TechCorp', 'GlobalFin', 'HealthPlus', 'RetailX'],
+  customers: ['Enterprise A', 'TechCorp', 'GlobalFin', 'HealthPlus', 'RetailX'],
 } as const

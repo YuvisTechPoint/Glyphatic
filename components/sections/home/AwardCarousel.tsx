@@ -66,7 +66,7 @@ export function AwardCarousel({ awards, className }: AwardCarouselProps) {
  onClick={scrollPrev}
  disabled={!canScrollPrev}
  aria-label="Previous awards"
- className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 text-neutral-600 hover:border-[#FA582D] hover:text-[#FA582D] disabled:opacity-40 transition-colors"
+ className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 text-neutral-600 hover:border-[#0F4C81] hover:text-[#0F4C81] disabled:opacity-40 transition-colors"
  >
  <ChevronLeft className="h-4 w-4" />
  </button>
@@ -75,7 +75,7 @@ export function AwardCarousel({ awards, className }: AwardCarouselProps) {
  onClick={scrollNext}
  disabled={!canScrollNext}
  aria-label="Next awards"
- className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 text-neutral-600 hover:border-[#FA582D] hover:text-[#FA582D] disabled:opacity-40 transition-colors"
+ className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 text-neutral-600 hover:border-[#0F4C81] hover:text-[#0F4C81] disabled:opacity-40 transition-colors"
  >
  <ChevronRight className="h-4 w-4" />
  </button>

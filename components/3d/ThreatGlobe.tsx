@@ -41,7 +41,7 @@ function Arc({ start, end }: { start: THREE.Vector3; end: THREE.Vector3 }) {
  start={start}
  end={end}
  mid={controlPoint}
- color="#FA582D" // Brand orange
+ color="#0F4C81" // Brand orange
  lineWidth={1.5}
  dashed
  dashScale={50}

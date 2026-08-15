@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://www.paloaltonetworks.in',
+  siteUrl: process.env.SITE_URL || 'https://www.glyphatic.com',
   generateRobotsTxt: true,
-  exclude: ['/studio/*'], // Exclude CMS studio from sitemap
+  exclude: ['/studio/*'],
 }

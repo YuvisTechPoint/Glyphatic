@@ -44,7 +44,7 @@ export function MegaNav() {
  {menu.label}
  <span
  className={cn(
- 'absolute inset-x-2 -bottom-[25px] h-[3px] rounded-t-full bg-[#FA582D] transition-opacity',
+ 'absolute inset-x-2 -bottom-[25px] h-[3px] rounded-t-full bg-[#0F4C81] transition-opacity',
  isActive ? 'opacity-100' : 'opacity-0'
  )}
  aria-hidden

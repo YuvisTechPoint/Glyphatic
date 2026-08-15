@@ -16,7 +16,7 @@ export function MegaNavColumn({ column, className }: MegaNavColumnProps) {
  {column.headingHref ? (
  <Link
  href={column.headingHref}
- className="label-eyebrow mb-3 inline-flex items-center gap-1 text-neutral-600 hover:text-[#FA582D] transition-colors"
+ className="label-eyebrow mb-3 inline-flex items-center gap-1 text-neutral-600 hover:text-[#0F4C81] transition-colors"
  >
  {column.heading}
  <ArrowRight className="h-3 w-3" aria-hidden />
@@ -33,7 +33,7 @@ export function MegaNavColumn({ column, className }: MegaNavColumnProps) {
  rel={link.external ? 'noopener noreferrer' : undefined}
  className={cn(
  'block text-sm text-neutral-700 font-medium transition-all duration-200',
- 'hover:text-[#FA582D] hover:pl-1'
+ 'hover:text-[#0F4C81] hover:pl-1'
  )}
  >
  {link.label}

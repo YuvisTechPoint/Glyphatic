@@ -111,7 +111,7 @@ export function SearchOverlay({ open, onOpenChange }: SearchOverlayProps) {
  type="text"
  value={query}
  onChange={(e) => setQuery(e.target.value)}
- className="w-full h-10 rounded-full border border-white/15 bg-[#1f1f1f] px-5 text-sm text-neutral-900 placeholder:text-neutral-500 outline-none focus:border-[#FA582D] focus:ring-1 focus:ring-[#FA582D] transition-all"
+  className="w-full h-10 rounded-full border border-black/10 bg-white px-5 text-sm text-neutral-900 placeholder:text-neutral-500 outline-none focus:border-[#0F4C81] focus:ring-1 focus:ring-[#0F4C81] transition-all"
  placeholder=""
  aria-label="Search"
  />
@@ -146,15 +146,15 @@ export function SearchOverlay({ open, onOpenChange }: SearchOverlayProps) {
  onClick={() => onOpenChange(false)}
  className="group flex items-start gap-4 py-3.5 hover:bg-black/5 -mx-3 px-3 rounded-lg transition-colors"
  >
- <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FA582D]/10 text-[#FA582D]">
+ <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0F4C81]/10 text-[#0F4C81]">
  <Icon className="h-4 w-4" />
  </span>
  <span className="min-w-0 flex-1">
  <span className="flex items-center gap-2">
- <span className="font-semibold text-neutral-900 group-hover:text-[#FA582D] transition-colors text-sm">
+ <span className="font-semibold text-neutral-900 group-hover:text-[#0F4C81] transition-colors text-sm">
  {result.title}
  </span>
- <ArrowRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-[#FA582D]" />
+ <ArrowRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-[#0F4C81]" />
  </span>
  {result.excerpt && (
  <span className="mt-0.5 block text-xs text-neutral-600 line-clamp-1">

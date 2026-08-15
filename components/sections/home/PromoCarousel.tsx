@@ -86,7 +86,7 @@ export function PromoCarousel() {
  }, [emblaApi])
 
  return (
- <section className="bg-gradient-to-r from-[#140605] to-[#090302] py-8">
+  <section className="bg-gradient-to-r from-[#0F4C81]/5 to-[#C9A227]/10 py-8">
  <div className="container-wide">
  <div className="mb-6 flex items-center justify-between">
  <h2 className="text-[13px] font-bold tracking-[0.15em] text-neutral-900">RECOMMENDED</h2>

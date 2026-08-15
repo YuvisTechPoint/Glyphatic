@@ -16,29 +16,29 @@ export function MegaNavFeatured({ featured, className }: MegaNavFeaturedProps) {
  <Link
  href={featured.href}
  className={cn(
- 'group relative flex min-h-[220px] flex-col justify-end overflow-hidden rounded-md',
- 'border border-neutral-200 bg-neutral-950 p-5 text-neutral-900 transition-shadow hover:shadow-hover',
- className
- )}
- >
- {featured.image ? (
- <Image
- src={featured.image}
- alt=""
- fill
- className="object-cover opacity-60 transition-opacity group-hover:opacity-70"
- sizes="280px"
- />
- ) : (
- <div className="absolute inset-0 bg-gradient-to-br from-brand-600 to-neutral-950" aria-hidden />
- )}
- <div className="relative z-10">
- <span className="label-eyebrow text-brand-300">{featured.label}</span>
- <h3 className="mt-2 font-display text-lg font-semibold leading-snug">{featured.title}</h3>
- {featured.description && (
- <p className="mt-2 text-sm text-neutral-700 line-clamp-2">{featured.description}</p>
- )}
- <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-300 group-hover:text-neutral-900 transition-colors">
+  'group relative flex min-h-[220px] flex-col justify-end overflow-hidden rounded-md',
+  'border border-neutral-200 bg-white p-5 text-neutral-900 transition-shadow hover:shadow-hover',
+  className
+  )}
+  >
+  {featured.image ? (
+  <Image
+  src={featured.image}
+  alt=""
+  fill
+  className="object-cover opacity-60 transition-opacity group-hover:opacity-70"
+  sizes="280px"
+  />
+  ) : (
+  <div className="absolute inset-0 bg-gradient-to-br from-brand-50 to-brand-100" aria-hidden />
+  )}
+  <div className="relative z-10">
+  <span className="label-eyebrow text-brand-600">{featured.label}</span>
+  <h3 className="mt-2 font-display text-lg font-semibold leading-snug">{featured.title}</h3>
+  {featured.description && (
+  <p className="mt-2 text-sm text-neutral-700 line-clamp-2">{featured.description}</p>
+  )}
+  <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-600 group-hover:text-brand-700 transition-colors">
  Learn more
  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
  </span>

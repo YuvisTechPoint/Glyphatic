@@ -10,8 +10,8 @@ import {
 import { cn } from '@/lib/utils'
 
 const variantStyles = {
- primary:
- 'bg-brand-500 text-neutral-900 border border-brand-500 hover:bg-brand-600 hover:border-brand-600 active:bg-brand-700',
+  primary:
+  'bg-brand-500 text-white border border-brand-500 hover:bg-brand-600 hover:border-brand-600 active:bg-brand-700',
  secondary:
  'bg-white text-neutral-900 border border-neutral-300 hover:border-neutral-400 hover:bg-neutral-50 active:bg-neutral-100',
  ghost:

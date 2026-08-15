@@ -28,15 +28,8 @@ export function NewsletterSection() {
  }
 
  return (
- <section 
- className="relative bg-[#0d0d0d] py-20 lg:py-24 overflow-hidden border-t border-black/5 bg-no-repeat"
- style={{
- backgroundImage: 'url("https://www.paloaltonetworks.in/etc/clientlibs/clean/imgs/2023/footer-form-bg.svg")',
- backgroundSize: 'cover',
- backgroundPosition: 'center',
- }}
- >
- <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-transparent to-[#0d0d0d]" />
+  <section className="relative bg-gray-50 py-20 lg:py-24 overflow-hidden border-t border-black/5">
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0F4C81]/5 via-transparent to-[#0F4C81]/5" />
 
  <div className="container-wide relative z-10">
  <FadeInView>
@@ -61,11 +54,11 @@ export function NewsletterSection() {
  value={email}
  onChange={(e) => setEmail(e.target.value)}
  placeholder="Enter your email now to subscribe!"
- className="w-full h-12 bg-transparent border-0 border-b border-black/20 px-0 text-[16px] text-neutral-900 placeholder:text-neutral-900/70 focus:border-[#FA582D] focus:outline-none focus:ring-0 transition-colors font-serif"
+ className="w-full h-12 bg-transparent border-0 border-b border-black/20 px-0 text-[16px] text-neutral-900 placeholder:text-neutral-900/70 focus:border-[#0F4C81] focus:outline-none focus:ring-0 transition-colors font-serif"
  aria-label="Email address"
  />
  {/* Small icon in input (optional) */}
- <div className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 bg-[#3a8b75] text-neutral-900 text-[10px] flex items-center justify-center font-bold">
+  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 bg-[#0F4C81] text-white text-[10px] flex items-center justify-center font-bold">
  ✓
  </div>
  </div>
@@ -73,32 +66,32 @@ export function NewsletterSection() {
  <button
  type="submit"
  disabled={status === 'loading'}
- className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#C84727] px-8 text-[15px] font-medium text-neutral-900 transition-colors hover:bg-[#FA582D] disabled:opacity-50"
+  className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#0F4C81] px-8 text-[15px] font-medium text-white transition-colors hover:bg-[#0B3A66] disabled:opacity-50"
  >
  {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
  <ArrowRight className="h-4 w-4" />
  </button>
  </form>
 
- {status === 'success' && (
- <p className="mt-3 text-[14px] text-[#00E676]">
- Thank you for subscribing!
- </p>
- )}
- {status === 'error' && (
- <p className="mt-3 text-[14px] text-[#FF5252]">
- Something went wrong. Please try again.
- </p>
- )}
+  {status === 'success' && (
+  <p className="mt-3 text-[14px] text-green-700">
+  Thank you for subscribing!
+  </p>
+  )}
+  {status === 'error' && (
+  <p className="mt-3 text-[14px] text-red-600">
+  Something went wrong. Please try again.
+  </p>
+  )}
 
  <p className="mt-6 text-[12px] md:text-[13px] text-neutral-900/80 leading-relaxed font-medium">
  By submitting this form, I understand my personal data will be processed in
  accordance with{' '}
- <Link href="/legal/privacy" className="text-neutral-900 underline underline-offset-2 hover:text-[#FA582D] transition-colors font-bold">
+ <Link href="/legal/privacy" className="text-neutral-900 underline underline-offset-2 hover:text-[#0F4C81] transition-colors font-bold">
  GlyphaticSystems Privacy Statement
  </Link>{' '}
  and{' '}
- <Link href="/legal/terms" className="text-neutral-900 underline underline-offset-2 hover:text-[#FA582D] transition-colors font-bold">
+ <Link href="/legal/terms" className="text-neutral-900 underline underline-offset-2 hover:text-[#0F4C81] transition-colors font-bold">
  Terms of Use.
  </Link>
  </p>
