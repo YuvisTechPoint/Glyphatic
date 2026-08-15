@@ -1,5 +1,5 @@
 export const SITE_NAME = 'Glyphatic'
-export const SITE_TAGLINE = "We don't just design transformations. We operate them."
+export const SITE_TAGLINE = 'We transform, automate, modernize, and operate businesses for the AI era.'
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.glyphatic.com'
 export const LOCALE = process.env.NEXT_PUBLIC_LOCALE || 'en-IN'
 export const COPYRIGHT_YEAR = 2026
@@ -14,6 +14,8 @@ export const SOCIAL_LINKS = {
 
 export const MISSION =
   'We transform, automate, modernize, and operate businesses for the AI era. Seven integrated divisions — Strategy, AI, Systems, Growth, Authority, Operations, and Intelligence — delivering end-to-end business transformation.'
+
+export const POSITIONING_LINE = 'AI-Native Business Transformation, Technology & Operations'
 
 export const CEO = {
   name: 'Debanjan Sandhaki',

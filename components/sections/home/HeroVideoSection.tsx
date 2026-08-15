@@ -25,7 +25,7 @@ export function HeroVideoSection() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#C9A227]/40 bg-[#C9A227]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#A8861D]">
-            AI-Native Business Transformation
+            AI-Native Business Transformation, Technology &amp; Operations
           </div>
         </motion.div>
 
@@ -35,15 +35,14 @@ export function HeroVideoSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
         >
-          We don&apos;t just design transformations.
-          <span className="text-[#0F4C81]"> We operate them.</span>
+          We transform, automate, modernize,
+          <span className="text-[#0F4C81]"> and operate</span> businesses for the AI era.
         </motion.h1>
 
         <FadeInView delay={0.2}>
           <p className="mt-6 max-w-[650px] text-[1.125rem] md:text-[1.25rem] font-medium leading-[1.6] text-neutral-600">
             Seven integrated divisions — Strategy, AI, Systems, Growth, Authority,
-            Operations, and Intelligence — delivering end-to-end business
-            transformation for the AI era.
+            Operations, and Intelligence. One transformation partner, end to end.
           </p>
         </FadeInView>
 

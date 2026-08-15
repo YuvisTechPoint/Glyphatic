@@ -1,5 +1,7 @@
 import { HeroVideoSection } from '@/components/sections/home/HeroVideoSection'
 import { PromoCarousel } from '@/components/sections/home/PromoCarousel'
+import { DivisionsSection } from '@/components/sections/home/DivisionsSection'
+import { JourneySection } from '@/components/sections/home/JourneySection'
 import { DefendAtScaleSection } from '@/components/sections/home/DefendAtScaleSection'
 import { FounderQuoteSection } from '@/components/sections/home/FounderQuoteSection'
 import { EngageGridSection } from '@/components/sections/home/EngageGridSection'
@@ -23,6 +25,8 @@ export default function Home() {
     <>
       <HeroVideoSection />
       <PromoCarousel />
+      <DivisionsSection />
+      <JourneySection />
       <DefendAtScaleSection />
       <FounderQuoteSection />
       <EngageGridSection />

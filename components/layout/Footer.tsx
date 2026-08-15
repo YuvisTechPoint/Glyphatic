@@ -30,7 +30,7 @@ export interface FooterProps {
 
 export function Footer({ className }: FooterProps) {
  const [email, setEmail] = useState('')
-  const productsMenu = MEGA_NAV.find((m) => m.id === 'services')
+   const productsMenu = MEGA_NAV.find((m) => m.id === 'divisions')
 
  const handleNewsletter = (e: FormEvent) => {
  e.preventDefault()
@@ -42,9 +42,9 @@ export function Footer({ className }: FooterProps) {
  {/* Link columns */}
  <div className="container-wide py-12 lg:py-16">
  <div className="grid gap-10 lg:grid-cols-12">
- {/* Products and Services */}
- <div className="lg:col-span-7">
- <h3 className="label-eyebrow mb-6 text-neutral-500">Products and Services</h3>
+  {/* Divisions */}
+  <div className="lg:col-span-7">
+  <h3 className="label-eyebrow mb-6 text-neutral-500">Divisions</h3>
  {productsMenu && (
  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
  {productsMenu.columns.map((column) => (

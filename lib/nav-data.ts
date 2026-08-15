@@ -1,3 +1,5 @@
+import { DIVISIONS, SERVICE_CATEGORIES } from '@/lib/services-data'
+
 export type NavLink = {
   label: string
   href: string
@@ -29,82 +31,22 @@ export const MEGA_NAV: MegaNavMenu[] = [
   {
     id: 'divisions',
     label: 'Divisions',
-    columns: [
-      {
-        heading: 'Glyphatic Advisory',
-        headingHref: '/services#advisory',
-        links: [
-          { label: 'Business Transformation', href: '/services#advisory' },
-          { label: 'AI Strategy & Readiness', href: '/services#advisory' },
-          { label: 'Operating Model Redesign', href: '/services#advisory' },
-          { label: 'Executive & CEO Advisory', href: '/services#advisory' },
-        ],
-      },
-      {
-        heading: 'Glyphatic AI',
-        headingHref: '/services#ai',
-        links: [
-          { label: 'AI Assistants & Copilots', href: '/services#ai' },
-          { label: 'AI Workflow Automation', href: '/services#ai' },
-          { label: 'AI Document Processing', href: '/services#ai' },
-          { label: 'AI Workforce Transformation', href: '/services#ai' },
-        ],
-      },
-      {
-        heading: 'Glyphatic Systems',
-        headingHref: '/services#systems',
-        links: [
-          { label: 'Business Operating Systems', href: '/services#systems' },
-          { label: 'Process & CRM Automation', href: '/services#systems' },
-          { label: 'Mewayz Implementation', href: '/services#systems' },
-          { label: 'API & ERP Integrations', href: '/services#systems' },
-        ],
-      },
-      {
-        heading: 'Glyphatic Growth',
-        headingHref: '/services#growth',
-        links: [
-          { label: 'Sales Pipeline Architecture', href: '/services#growth' },
-          { label: 'Performance Marketing', href: '/services#growth' },
-          { label: 'Revenue Optimization', href: '/services#growth' },
-          { label: 'Go-to-Market Strategy', href: '/services#growth' },
-        ],
-      },
-      {
-        heading: 'Glyphatic Authority',
-        headingHref: '/services#authority',
-        links: [
-          { label: 'Brand Strategy & Positioning', href: '/services#authority' },
-          { label: 'Executive Thought Leadership', href: '/services#authority' },
-          { label: 'Corporate & Visual Identity', href: '/services#authority' },
-          { label: 'Digital Experience (UX/UI)', href: '/services#authority' },
-        ],
-      },
-      {
-        heading: 'Glyphatic Operations',
-        headingHref: '/services#operations',
-        links: [
-          { label: 'Customer Operations & Support', href: '/services#operations' },
-          { label: 'Sales & Lead Qualification BPO', href: '/services#operations' },
-          { label: 'Back Office & Finance BPO', href: '/services#operations' },
-          { label: 'Industry-Specific Operations', href: '/services#operations' },
-        ],
-      },
-      {
-        heading: 'Glyphatic Intelligence',
-        headingHref: '/services#intelligence',
-        links: [
-          { label: 'Executive Dashboards', href: '/services#intelligence' },
-          { label: 'Business Intelligence Systems', href: '/services#intelligence' },
-          { label: 'KPI Architecture & Reporting', href: '/services#intelligence' },
-          { label: 'Sales & Marketing Analytics', href: '/services#intelligence' },
-        ],
-      },
-    ],
+    columns: DIVISIONS.map((division) => ({
+      heading: division.name,
+      headingHref: `/services#${division.id}`,
+      links: division.categoryIds.map((categoryId) => {
+        const category = SERVICE_CATEGORIES.find((c) => c.id === categoryId)
+        return {
+          label: category?.title ?? categoryId,
+          href: `/services#${categoryId}`,
+        }
+      }),
+    })),
     featured: {
-      label: 'FEATURED',
-      title: 'The Ultimate Client Journey',
-      description: 'Diagnose → Strategize → Transform → Automate → Implement → Operate → Optimize → Scale',
+      label: 'THE GLYPHATIC ARCHITECTURE',
+      title: 'Seven capabilities. One transformation partner.',
+      description:
+        'Diagnose → Strategize → Transform → Automate → Implement → Operate → Optimize → Scale',
       href: '/services#journey',
     },
   },
@@ -115,38 +57,43 @@ export const MEGA_NAV: MegaNavMenu[] = [
       {
         heading: 'By Business Need',
         links: [
+          { label: 'Strategy & Business Consulting', href: '/services#strategy' },
           { label: 'AI Transformation', href: '/services#ai' },
-          { label: 'Business Automation', href: '/services#systems' },
-          { label: 'Sales & Revenue Infrastructure', href: '/services#growth' },
+          { label: 'Business Automation', href: '/services#automation' },
+          { label: 'Digital Infrastructure', href: '/services#infrastructure' },
+          { label: 'Sales & Revenue Systems', href: '/services#revenue' },
           { label: 'Marketing & Growth', href: '/services#growth' },
           { label: 'Brand & Authority Engineering', href: '/services#authority' },
-          { label: 'Digital Experience', href: '/services#authority' },
+          { label: 'Digital Experience', href: '/services#digital-experience' },
+        ],
+      },
+      {
+        heading: 'Operations & Delivery',
+        links: [
+          { label: 'Business Process Outsourcing', href: '/services#bpo' },
+          { label: 'Managed Services', href: '/services#managed' },
+          { label: 'Training & Change Management', href: '/services#training' },
+          { label: 'Data & Business Intelligence', href: '/services#intelligence' },
+          { label: 'Cybersecurity & Digital Risk', href: '/services#cybersecurity' },
         ],
       },
       {
         heading: 'By Industry',
         links: [
-          { label: 'Education', href: '/services#operations' },
-          { label: 'Real Estate', href: '/services#operations' },
-          { label: 'Healthcare', href: '/services#operations' },
-          { label: 'Recruitment & Staffing', href: '/services#operations' },
-          { label: 'E-commerce', href: '/services#operations' },
-        ],
-      },
-      {
-        heading: 'Specialized Services',
-        links: [
-          { label: 'Cybersecurity & Digital Risk', href: '/services#cybersecurity' },
-          { label: 'Training & Change Management', href: '/services#training' },
-          { label: 'Managed Services', href: '/services#managed' },
+          { label: 'Education', href: '/services#industry' },
+          { label: 'Real Estate', href: '/services#industry' },
+          { label: 'Healthcare', href: '/services#industry' },
+          { label: 'Recruitment & Staffing', href: '/services#industry' },
+          { label: 'E-commerce', href: '/services#industry' },
         ],
       },
     ],
     featured: {
       label: 'PLATFORM',
       title: 'Mewayz — Business Operating System',
-      description: 'Deploy, configure, and manage your entire business operating layer on one platform.',
-      href: '/services#systems',
+      description:
+        'Not software. A business operating system — deploy, configure, and manage your entire operating layer.',
+      href: '/services#mewayz',
     },
   },
   {
@@ -157,7 +104,7 @@ export const MEGA_NAV: MegaNavMenu[] = [
         heading: 'About Glyphatic',
         links: [
           { label: 'About Us', href: '/about-us' },
-          { label: 'Our Architecture', href: '/services' },
+          { label: 'The Glyphatic Architecture', href: '/services' },
           { label: 'Leadership', href: '/about-us/leadership' },
           { label: 'Careers', href: '/careers' },
           { label: 'Contact Us', href: '/discuss-architecture' },
@@ -190,6 +137,8 @@ export const FOOTER_COMPANY: NavLink[] = [
 ]
 
 export const FOOTER_POPULAR: NavLink[] = [
+  { label: 'The Glyphatic Architecture', href: '/services' },
+  { label: 'Client Journey', href: '/services#journey' },
   { label: 'Blog', href: '/blog' },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Architecture Patterns', href: '/resources/architecture-patterns' },
