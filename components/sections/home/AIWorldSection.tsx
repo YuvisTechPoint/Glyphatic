@@ -8,32 +8,32 @@ const GOOD_NEWS_STATS = [
   {
     value: 78,
     suffix: '%',
-    label: '~1.5X growth',
-    sublabel: 'IN USAGE IN LAST \n12 MONTHS'
+    label: 'Growth in AI Usage',
+    sublabel: 'IN THE LAST 12 MONTHS'
   },
   {
     value: 94,
     suffix: '%',
-    label: 'development',
-    sublabel: 'ENTERPRISES USING GEN AI \nSOFTWARE'
+    label: 'Gen AI Adoption',
+    sublabel: 'ENTERPRISES USING GEN AI SOFTWARE'
   },
 ] as const
 
 const BAD_NEWS_STATS = [
   {
-    value: 56,
+    value: 67,
     suffix: '%',
-    label: 'INCREASE IN EXPLOITED ZERO DAYS (YoY, 2023)',
+    label: 'OF BUSINESSES STILL RUN ON FRAGMENTED SYSTEMS',
   },
   {
-    value: 73,
+    value: 72,
     suffix: '%',
-    label: 'INCREASE IN RANSOMWARE ATTACKS (YoY, 2023)',
+    label: 'OF MANUAL PROCESSES REMAIN UNAUTOMATED',
   },
   {
-    value: 56,
+    value: 58,
     suffix: '%',
-    label: 'INCREASE IN DATA BREACHES AND LEAKS (YoY, 2023)',
+    label: 'OF TRANSFORMATION INITIATIVES STALL AT SCALE',
   },
 ] as const
 
@@ -75,13 +75,13 @@ function AnimatedCircleStat({ value, suffix, label, sublabel }: { value: number,
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-[3rem] md:text-[3.5rem] font-bold text-white tracking-tight drop-shadow-md">
+          <span className="text-[3rem] md:text-[3.5rem] font-bold text-neutral-900 dark:text-white tracking-tight drop-shadow-md">
             {text} <span className="text-[2rem] md:text-[2.5rem]">{suffix}</span>
           </span>
         </div>
       </div>
       <h4 className="text-[1.35rem] md:text-[1.5rem] font-medium text-[#FA582D] mb-2">{label}</h4>
-      <p className="text-[10px] md:text-[11px] font-bold text-white tracking-[0.15em] uppercase text-center leading-relaxed whitespace-pre-line">
+      <p className="text-[10px] md:text-[11px] font-bold text-neutral-500 dark:text-white/80 tracking-[0.15em] uppercase text-center leading-relaxed whitespace-pre-line">
         {sublabel}
       </p>
     </FadeInView>
@@ -105,7 +105,7 @@ function AnimatedBarStat({ value, suffix, label }: { value: number, suffix: stri
 
   return (
     <div ref={ref} className="w-full">
-      <h4 className="text-[11px] md:text-[13px] font-bold text-white mb-2 uppercase tracking-[0.05em]">
+      <h4 className="text-[11px] md:text-[13px] font-bold text-neutral-600 dark:text-white mb-2 uppercase tracking-[0.05em]">
         {label}
       </h4>
       <div className="flex items-center gap-4">
@@ -115,7 +115,7 @@ function AnimatedBarStat({ value, suffix, label }: { value: number, suffix: stri
           animate={isInView ? { width: `${value}%` } : { width: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         />
-        <span className="text-[2rem] md:text-[2.5rem] font-bold text-white leading-none tracking-tight shrink-0">
+        <span className="text-[2rem] md:text-[2.5rem] font-bold text-neutral-900 dark:text-white leading-none tracking-tight shrink-0">
           {text}<span className="text-[1.5rem] md:text-[1.75rem]">{suffix}</span>
         </span>
       </div>
@@ -156,7 +156,7 @@ export function AIWorldSection() {
   }, [])
 
   return (
-    <section className="bg-black relative overflow-hidden">
+    <section className="bg-white dark:bg-black relative overflow-hidden transition-colors duration-200">
       {/* Background Graphic */}
       <div className="absolute right-0 top-0 w-1/2 max-w-[800px] opacity-20 pointer-events-none">
         <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,13 +167,13 @@ export function AIWorldSection() {
         </svg>
       </div>
 
-      {/* Chapter A — The Good News */}
+      {/* Chapter A — Intelligence */}
       <div className="pt-20 pb-16 lg:pt-32 lg:pb-24">
         <div className="container-wide relative z-10">
           <FadeInView>
             <div className="mb-20 lg:mb-32">
-              <h2 className="text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-medium leading-[1.1] text-white">
-                A new <span className="text-[#FA582D]">AI world</span> is here
+              <h2 className="text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-medium leading-[1.1] text-neutral-900 dark:text-white">
+                A new era of <span className="text-[#FA582D]">intelligent business</span> is here
               </h2>
             </div>
           </FadeInView>
@@ -182,11 +182,23 @@ export function AIWorldSection() {
             <div className="w-full lg:w-5/12">
               <FadeInView delay={0.2}>
                 <span className="block text-[13px] md:text-[15px] font-bold tracking-[0.15em] text-[#FA582D] uppercase mb-6">
-                  THE GOOD NEWS
+                  INTELLIGENCE
                 </span>
-                <h3 className="text-[2.5rem] md:text-[3rem] lg:text-[3.75rem] font-medium leading-[1.15] text-white">
-                  AI is rapidly<br className="hidden md:block" />transforming your<br className="hidden md:block" />organization
+                <h3 className="text-[2.5rem] md:text-[3rem] lg:text-[3.75rem] font-medium leading-[1.15] text-neutral-900 dark:text-white">
+                  AI is rapidly<br className="hidden md:block" />transforming how<br className="hidden md:block" />businesses operate
                 </h3>
+                <p className="mt-6 text-neutral-600 dark:text-neutral-400 text-sm md:text-base leading-relaxed">
+                  The businesses winning in 2026 aren&apos;t just digitizing old processes. They&apos;re rebuilding operations around a fundamentally different model:
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li><strong>Intelligence</strong> &rarr; Deploy AI where decisions happen</li>
+                  <li><strong>Automation</strong> &rarr; Eliminate repetitive work systematically</li>
+                  <li><strong>Operations</strong> &rarr; Run business functions at scale</li>
+                  <li><strong>Growth</strong> &rarr; Accelerate revenue with precision</li>
+                </ul>
+                <p className="mt-4 text-neutral-600 dark:text-neutral-400 text-sm md:text-base leading-relaxed">
+                  The gap between traditional businesses and intelligent enterprises is widening rapidly. The question isn&apos;t whether to transform—it&apos;s whether you&apos;ll lead the transformation or be disrupted by it.
+                </p>
               </FadeInView>
             </div>
 
@@ -201,12 +213,12 @@ export function AIWorldSection() {
         </div>
       </div>
 
-      {/* Chapter B — The Bad News */}
-      <div className="relative overflow-hidden py-20 lg:py-32">
-        {!videoFailed && (
+      {/* Chapter B — The Challenge */}
+      <div className="relative overflow-hidden py-20 lg:py-32 bg-white dark:bg-black transition-colors duration-200">
+        {!videoFailed && false && (
           <video
             ref={videoRef}
-            className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-screen"
+            className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-multiply dark:mix-blend-screen invert dark:invert-0"
             autoPlay
             muted
             loop
@@ -217,7 +229,7 @@ export function AIWorldSection() {
           </video>
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white dark:from-black dark:via-black/80 dark:to-black pointer-events-none transition-colors duration-200" />
 
         <div className="container-wide relative z-10">
           <div className="flex flex-col lg:flex-row-reverse gap-16 lg:gap-24 items-center">
@@ -226,11 +238,17 @@ export function AIWorldSection() {
             <div className="w-full lg:w-5/12">
               <FadeInView>
                 <span className="block text-[11px] font-bold tracking-[0.15em] text-[#FA582D] uppercase mb-4">
-                  THE BAD NEWS
+                  THE CHALLENGE
                 </span>
-                <h3 className="text-[2rem] md:text-[2.5rem] font-medium leading-[1.2] text-white">
-                  Attackers are<br className="hidden md:block" />supercharging their<br className="hidden md:block" />speed and scale.
+                <h3 className="text-[2rem] md:text-[2.5rem] font-medium leading-[1.2] text-neutral-900 dark:text-white">
+                  Most businesses are<br className="hidden md:block" />still operating on<br className="hidden md:block" />yesterday&apos;s infrastructure.
                 </h3>
+                <p className="mt-4 text-neutral-600 dark:text-neutral-400 text-sm md:text-base leading-relaxed">
+                  Indian and Asian businesses face unique challenges: fragmented technology infrastructure, diverse customer bases, complex regulatory environments, and intense price competition. Generic Western transformation frameworks don&apos;t account for these realities.
+                </p>
+                <p className="mt-4 text-[#FA582D] text-sm md:text-base font-bold">
+                  Glyphatic was built specifically for these conditions.
+                </p>
               </FadeInView>
             </div>
 

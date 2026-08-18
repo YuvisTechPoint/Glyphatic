@@ -2,198 +2,97 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Hexagon, Shield, Cloud, Lock, Cpu, Crosshair, Building2 } from 'lucide-react'
+import { ArrowRight, Hexagon, Box, Bot, Brain, BarChart3, Workflow } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FadeInView } from '@/components/animations/FadeInView'
 import { cn } from '@/lib/utils'
 
-interface SolutionLink {
+interface ProductLink {
   label: string
   href: string
 }
 
-interface SolutionTab {
+interface ProductTab {
   id: string
   label: string
   Icon: any
-  links: SolutionLink[]
+  links: ProductLink[]
 }
 
-const SOLUTION_TABS: SolutionTab[] = [
+const PRODUCT_TABS: ProductTab[] = [
   {
-    id: 'ai',
-    label: 'Secure Your AI ecosystem',
-    Icon: Hexagon,
+    id: 'mewayz',
+    label: 'Mewayz — Business Operating System',
+    Icon: Box,
     links: [
       {
-        label: 'Secure AI apps, agents, models, and data at every step',
-        href: '/ai-security/prisma-airs',
+        label: 'Unified CRM & Sales Management for growing teams',
+        href: '/products/mewayz#crm',
       },
       {
-        label: 'Secure the use of GenAI applications in the enterprise',
-        href: '/ai-security/ai-access-security',
+        label: 'Project & Operations Management to track client delivery',
+        href: '/products/mewayz#operations',
+      },
+      {
+        label: 'Customer Service & Support Management with AI routing',
+        href: '/products/mewayz#support',
+      },
+      {
+        label: 'Process Automation & Workflow Management for manual tasks',
+        href: '/products/mewayz#automation',
       },
     ],
   },
   {
-    id: 'network',
-    label: 'Secure your network',
-    Icon: Shield,
+    id: 'edquate',
+    label: 'Edquate — Education Intelligence Platform',
+    Icon: Brain,
     links: [
       {
-        label: 'Secure the whole enterprise consistently',
-        href: '/network-security/secure-enterprise',
+        label: 'AI-Powered Student Information System & profiles',
+        href: '/products/edquate#sis',
       },
       {
-        label: 'Apply AI inline to prevent evasive threats',
-        href: '/network-security/ai-inline',
+        label: 'Learning Management System & Academic Analytics',
+        href: '/products/edquate#lms',
       },
       {
-        label: 'Simplify network security operations',
-        href: '/network-security/simplify-operations',
+        label: 'Admissions & Enrollment Automation for parent inquiries',
+        href: '/products/edquate#admissions',
       },
       {
-        label: 'Adopt Zero Trust across the network',
-        href: '/network-security/zero-trust',
-      },
-      {
-        label: 'Reduce complexity with AI-powered SASE',
-        href: '/sase',
-      },
-      {
-        label: 'Secure work on any device',
-        href: '/network-security/secure-any-device',
+        label: 'Fee Management & Finance Automation with online payments',
+        href: '/products/edquate#finance',
       },
     ],
   },
   {
-    id: 'cloud',
-    label: 'Secure your cloud',
-    Icon: Cloud,
+    id: 'ai-platforms',
+    label: 'AI Products & Business Platforms',
+    Icon: Bot,
     links: [
       {
-        label: 'The future of real-time cloud, today',
-        href: '/cortex/cloud',
+        label: 'Intelligent solutions for specific business functions',
+        href: '/products',
       },
       {
-        label: 'Stop risks at the source',
-        href: '/cortex/cloud/stop-risks',
+        label: 'Explore our growing suite of proprietary products',
+        href: '/products#roadmap',
       },
-      {
-        label: 'Rapidly prioritize and remediate risks across any cloud',
-        href: '/cortex/cloud/remediate-risks',
-      },
-      {
-        label: 'Prevent cloud attacks in real-time',
-        href: '/cortex/cloud/prevent-attacks',
-      },
-      {
-        label: 'Detect, investigate and respond to threats across enterprise and cloud',
-        href: '/cortex/cloud/detect-respond',
-      },
-    ],
-  },
-  {
-    id: 'identity',
-    label: 'Secure Your Identities',
-    Icon: Lock,
-    links: [
-      {
-        label: 'Close the access gaps attackers walk through',
-        href: '/idira/access-gaps',
-      },
-      {
-        label: 'Secure machine identities at the scale AI demands',
-        href: '/idira/machine-identities',
-      },
-      {
-        label: 'Secure agentic identities to accelerate AI innovation',
-        href: '/idira/agentic-identities',
-      },
-      {
-        label: 'Discover and govern every entitlement',
-        href: '/idira/govern-entitlements',
-      },
-      {
-        label: 'Eliminate standing privilege',
-        href: '/idira/eliminate-standing-privilege',
-      },
-    ],
-  },
-  {
-    id: 'soc',
-    label: 'Automate your SOC',
-    Icon: Cpu,
-    links: [
-      {
-        label: 'Reign in security operations with one platform',
-        href: '/cortex/unified-soc',
-      },
-      {
-        label: 'Accelerate threat detection and response',
-        href: '/cortex/threat-detection',
-      },
-      {
-        label: 'Deliver security at speed and scale with automation',
-        href: '/cortex/automation',
-      },
-      {
-        label: 'Secure and shrink your attack surface',
-        href: '/cortex/attack-surface',
-      },
-    ],
-  },
-  {
-    id: 'unit42',
-    label: 'Threat intel and incident response services',
-    Icon: Crosshair,
-    links: [
-      {
-        label: 'Threat Intel and Incident Response Services (Unit 42)',
-        href: '/unit42',
-      },
-      {
-        label: 'Proactive Assessments',
-        href: '/unit42/proactive-assessments',
-      },
-      {
-        label: 'Incident Response',
-        href: '/unit42/incident-response',
-      },
-      {
-        label: 'Transform Your Security Strategy',
-        href: '/unit42/transform-security-strategy',
-      },
-      {
-        label: 'Discover Threat Intelligence',
-        href: '/unit42/threat-intelligence',
-      },
-    ],
-  },
-  {
-    id: 'industry',
-    label: 'Solutions by industry',
-    Icon: Building2,
-    links: [
-      { label: 'Public sector', href: '/industry/public-sector' },
-      { label: 'Financial services', href: '/industry/financial-services' },
-      { label: 'Manufacturing', href: '/industry/manufacturing' },
-      { label: 'Healthcare', href: '/industry/healthcare' },
-      { label: 'SMB', href: '/industry/smb' },
     ],
   },
 ]
 
 export function SolutionsTabSection() {
-  const [activeTab, setActiveTab] = useState(SOLUTION_TABS[0].id)
-  const current = SOLUTION_TABS.find((t) => t.id === activeTab) ?? SOLUTION_TABS[0]
+  const [activeTab, setActiveTab] = useState(PRODUCT_TABS[0].id)
+  const current = PRODUCT_TABS.find((t) => t.id === activeTab) ?? PRODUCT_TABS[0]
 
   return (
-    <section className="relative min-h-[800px] w-full overflow-hidden bg-[#0A0A0A]">
+    <section className="relative min-h-[800px] w-full overflow-hidden bg-white dark:bg-[#0A0A0A] transition-colors duration-200">
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 dark:from-black dark:via-black/80 to-transparent z-10 transition-colors duration-200" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent dark:from-black dark:via-transparent to-transparent z-10 transition-colors duration-200" />
         {/* CSS-only ambient background — no external images */}
         <div
           className="absolute right-0 top-0 h-full w-2/3 opacity-30"
@@ -209,13 +108,13 @@ export function SolutionsTabSection() {
         {/* Left Column (Heading + Tabs) */}
         <div className="w-full lg:w-[400px] xl:w-[450px] shrink-0 flex flex-col">
           <FadeInView>
-            <h2 className="font-display text-[2.5rem] md:text-[3rem] lg:text-[3.25rem] leading-[1.1] font-medium text-white mb-16">
-              Secure whatever,<br />whenever, wherever —<br />with less complexity.
+            <h2 className="font-display text-[2.5rem] md:text-[3rem] lg:text-[3.25rem] leading-[1.1] font-medium text-neutral-900 dark:text-white mb-16">
+              Technology that<br />powers<br />transformation.
             </h2>
           </FadeInView>
 
           <div className="flex flex-col gap-6">
-            {SOLUTION_TABS.map((tab) => {
+            {PRODUCT_TABS.map((tab) => {
               const isActive = activeTab === tab.id
               return (
                 <button
@@ -227,14 +126,14 @@ export function SolutionsTabSection() {
                   <tab.Icon
                     className={cn(
                       'w-5 h-5 transition-colors',
-                      isActive ? 'text-[#00E5FF]' : 'text-gray-500 group-hover:text-gray-400'
+                      isActive ? 'text-[#00E5FF]' : 'text-neutral-400 dark:text-gray-500 group-hover:text-neutral-600 dark:group-hover:text-gray-400'
                     )}
                     strokeWidth={isActive ? 2.5 : 2}
                   />
                   <span
                     className={cn(
                       'text-[15px] font-medium transition-colors',
-                      isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'
+                      isActive ? 'text-neutral-900 dark:text-white' : 'text-neutral-500 dark:text-gray-400 group-hover:text-neutral-900 dark:group-hover:text-white'
                     )}
                   >
                     {tab.label}
@@ -260,7 +159,7 @@ export function SolutionsTabSection() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group flex items-start justify-between gap-4 text-white hover:text-[#00E5FF] transition-colors"
+                  className="group flex items-start justify-between gap-4 text-neutral-800 dark:text-white hover:text-[#00E5FF] dark:hover:text-[#00E5FF] transition-colors"
                 >
                   <span className="text-[17px] font-medium leading-snug">
                     {link.label}

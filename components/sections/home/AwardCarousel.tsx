@@ -1,11 +1,8 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
-import { ChevronLeft, ChevronRight, Trophy } from 'lucide-react'
-import { cn } from '@/lib/utils'
 import { FadeInView } from '@/components/animations/FadeInView'
+import { cn } from '@/lib/utils'
+import { Layers, AppWindow, BookOpen, Cpu, Award } from 'lucide-react'
 
 interface Award {
   name: string
@@ -17,102 +14,89 @@ interface AwardCarouselProps {
   className?: string
 }
 
-const ANALYST_COLORS: Record<string, string> = {
-  'Gartner': 'border-l-blue-500',
-  'Forrester': 'border-l-green-600',
-  'Frost & Sullivan': 'border-l-orange-500',
-  'GigaOm': 'border-l-purple-500',
-  'KuppingerCole': 'border-l-teal-500',
+const ORG_ICONS: Record<string, any> = {
+  'Methodology': Layers,
+  'Platform': AppWindow,
+  'Intelligence': BookOpen,
+  'Approach': Cpu,
+}
+
+const ORG_GRADIENTS: Record<string, string> = {
+  'Methodology': 'from-orange-500/20 to-brand-600/5 hover:border-orange-500/30',
+  'Platform': 'from-blue-500/20 to-indigo-600/5 hover:border-blue-500/30',
+  'Intelligence': 'from-emerald-500/20 to-teal-600/5 hover:border-emerald-500/30',
+  'Approach': 'from-purple-500/20 to-pink-600/5 hover:border-purple-500/30',
+}
+
+const ORG_ACCENTS: Record<string, string> = {
+  'Methodology': 'text-orange-400 bg-orange-500/10',
+  'Platform': 'text-blue-400 bg-blue-500/10',
+  'Intelligence': 'text-emerald-400 bg-emerald-500/10',
+  'Approach': 'text-purple-400 bg-purple-500/10',
 }
 
 export function AwardCarousel({ awards, className }: AwardCarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: 'start', loop: true, dragFree: true },
-    [Autoplay({ delay: 4000, stopOnInteraction: true })],
-  )
-  const [canScrollPrev, setCanScrollPrev] = useState(false)
-  const [canScrollNext, setCanScrollNext] = useState(false)
-
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi])
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi])
-
-  useEffect(() => {
-    if (!emblaApi) return
-    const onSelect = () => {
-      setCanScrollPrev(emblaApi.canScrollPrev())
-      setCanScrollNext(emblaApi.canScrollNext())
-    }
-    emblaApi.on('select', onSelect)
-    onSelect()
-    return () => { emblaApi.off('select', onSelect) }
-  }, [emblaApi])
-
   return (
-    <section className={cn('section-padding bg-[#111111]', className)}>
-      <div className="container-wide">
+    <section className={cn('section-padding bg-neutral-50 dark:bg-[#0A0D14] relative overflow-hidden transition-colors duration-200', className)}>
+      {/* Decorative background grids */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(250,88,45,0.02)_0%,_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_bottom_left,_rgba(250,88,45,0.05)_0%,_transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(41,98,255,0.01)_0%,_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top_right,_rgba(41,98,255,0.03)_0%,_transparent_50%)] pointer-events-none" />
+
+      <div className="container-wide relative z-10">
         <FadeInView>
-          <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-neutral-400 mb-2">
-                ANALYST RECOGNITION
-              </p>
-              <h2 className="font-display text-display-sm text-white">
-                Recognized industry leader
-              </h2>
-            </div>
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={scrollPrev}
-                disabled={!canScrollPrev}
-                aria-label="Previous awards"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-neutral-400 hover:border-[#FA582D] hover:text-[#FA582D] disabled:opacity-40 transition-colors"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button
-                type="button"
-                onClick={scrollNext}
-                disabled={!canScrollNext}
-                aria-label="Next awards"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-neutral-400 hover:border-[#FA582D] hover:text-[#FA582D] disabled:opacity-40 transition-colors"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
+          <div className="mb-12 text-center lg:text-left">
+            <span className="block text-[11px] font-bold uppercase tracking-[0.2em] text-[#FA582D] mb-3">
+              ANALYST RECOGNITION & CREDENTIALS
+            </span>
+            <h2 className="font-display text-[2.25rem] md:text-[2.75rem] font-bold text-neutral-900 dark:text-white tracking-tight leading-tight">
+              Recognized industry authority
+            </h2>
+            <p className="mt-4 text-neutral-600 dark:text-neutral-400 text-sm md:text-base max-w-2xl leading-relaxed">
+              Glyphatic is certified and recognized across our transformation framework methodology, business platforms, and hybrid operational model.
+            </p>
           </div>
         </FadeInView>
 
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-5">
-            {awards.map((award, i) => {
-              const borderColor = award.org ? (ANALYST_COLORS[award.org] || 'border-l-brand-500') : 'border-l-brand-500'
-              return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          {awards.map((award, i) => {
+            const orgType = award.org || 'Methodology'
+            const Icon = ORG_ICONS[orgType] || Award
+            const gradient = ORG_GRADIENTS[orgType] || 'from-[#FA582D]/20 to-neutral-900/5'
+            const accent = ORG_ACCENTS[orgType] || 'text-[#FA582D] bg-[#FA582D]/10'
+
+            return (
+              <FadeInView key={`${award.name}-${i}`} delay={i * 0.1}>
                 <div
-                  key={`${award.name}-${i}`}
                   className={cn(
-                    'group relative min-w-0 shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4',
-                    'flex flex-col gap-3 rounded-xl border border-white/5 bg-[#1a1a1a]/40 backdrop-blur-xl p-7 transition-all duration-500 ease-out',
-                    'hover:bg-[#222222]/80 hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]',
-                    'border-l-4',
-                    borderColor,
+                    'group relative flex flex-col justify-between min-h-[220px] rounded-2xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-[#12141C] p-6 transition-all duration-300 ease-out shadow-sm dark:shadow-none',
+                    'hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:-translate-y-1',
+                    'bg-gradient-to-br',
+                    gradient
                   )}
                 >
-                  <div className="flex items-center gap-3">
-                    <Trophy className="h-5 w-5 text-amber-500 shrink-0" strokeWidth={1.5} />
-                    {award.org && (
-                      <span className="text-[12px] font-bold text-neutral-400 uppercase tracking-wider">
-                        {award.org}
+                  <div>
+                    {/* Header: Icon + Category Badge */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className={cn('h-10 w-10 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 duration-300', accent)}>
+                        <Icon className="h-5 w-5" strokeWidth={1.75} />
+                      </div>
+                      <span className="text-[10px] font-bold tracking-widest text-neutral-400 dark:text-neutral-500 uppercase">
+                        {orgType}
                       </span>
-                    )}
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-[15px] md:text-[16px] font-semibold text-neutral-900 dark:text-white leading-snug group-hover:text-[#FA582D] transition-colors duration-200">
+                      {award.name}
+                    </h3>
                   </div>
-                  <p className="text-[14px] font-medium text-white/90 leading-snug">
-                    {award.name}
-                  </p>
+
+                  {/* Decorative subtle line at bottom */}
+                  <div className="mt-4 w-full h-[1px] bg-neutral-100 dark:bg-white/5 group-hover:bg-[#FA582D]/20 transition-colors" />
                 </div>
-              )
-            })}
-          </div>
+              </FadeInView>
+            )
+          })}
         </div>
       </div>
     </section>

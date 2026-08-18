@@ -31,9 +31,9 @@ export function MegaNav() {
               <button
                 type="button"
                 className={cn(
-                  'relative px-3 py-2 text-[14px] font-medium text-white transition-colors',
-                  'hover:text-white/80 focus-visible:outline-none',
-                  isActive && 'text-white'
+                  'relative px-3 py-2 text-[14px] font-medium transition-colors focus-visible:outline-none',
+                  'text-neutral-800 dark:text-white hover:text-neutral-600 dark:hover:text-white/80',
+                  isActive && 'text-neutral-900 dark:text-white'
                 )}
                 aria-expanded={isActive}
                 aria-haspopup="true"

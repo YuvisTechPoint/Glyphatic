@@ -7,19 +7,19 @@ const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.glyphatic.com'),
-  title: 'GlyphaticSystems — Boutique Systems Engineering, India',
-  description: "India's precision-first technology partner for AI, cloud infrastructure, web & mobile development, and intelligent BPO. Built for teams that won't accept slow.",
+  title: 'Glyphatic — Transform. Automate. Operate. Scale.',
+  description: 'AI-native business transformation, technology, and operations for the modern enterprise. Glyphatic helps organizations modernize, automate, and operate at scale.',
   icons: {
     icon: '/images/glyphatic-new-logo.png',
     shortcut: '/images/glyphatic-new-logo.png',
     apple: '/images/glyphatic-new-logo.png',
   },
   openGraph: {
-    title: 'GlyphaticSystems — Boutique Systems Engineering, India',
-    description: "India's precision-first technology partner for AI, cloud infrastructure, web & mobile development, and intelligent BPO. Built for teams that won't accept slow.",
+    title: 'Glyphatic — Transform. Automate. Operate. Scale.',
+    description: 'AI-native business transformation, technology, and operations for the modern enterprise. Glyphatic helps organizations modernize, automate, and operate at scale.',
     url: 'https://www.glyphatic.com',
     type: 'website',
-    siteName: 'GlyphaticSystems',
+    siteName: 'Glyphatic',
     images: [
       {
         url: '/images/glyphatic-new-logo.png',
@@ -32,12 +32,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GlyphaticSystems',
-    description: "India's precision-first technology partner.",
-    creator: '@GlyphaticSystems',
+    title: 'Glyphatic — Transform. Automate. Operate. Scale.',
+    description: 'AI-native business transformation, technology, and operations for the modern enterprise.',
+    creator: '@glyphatic',
     images: ['/images/glyphatic-new-logo.png'],
   },
 }
+
+import { ThemeProvider } from '@/components/theme/ThemeProvider'
 
 export default function RootLayout({
   children,
@@ -46,8 +48,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body className="font-sans antialiased bg-base-white text-neutral-900">
-        {children}
+      <body className="font-sans antialiased bg-base-white text-neutral-900 dark:bg-[#0A0D14] dark:text-neutral-100 transition-colors duration-200">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

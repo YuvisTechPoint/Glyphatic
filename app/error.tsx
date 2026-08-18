@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { AlertTriangle, RefreshCcw, Home } from 'lucide-react'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/Button'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 

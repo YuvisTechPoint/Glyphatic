@@ -14,29 +14,43 @@ import { PerspectivesCarousel } from '@/components/sections/home/PerspectivesCar
 import { NewsletterSection } from '@/components/sections/home/NewsletterSection'
 
 const GLOBAL_AWARDS = [
-  { org: 'Gartner', name: '2025 Gartner® Magic Quadrant™ for Custom Software Engineering' },
-  { org: 'Forrester', name: 'The Forrester Wave™: Modern Application Development, Q4 2025' },
-  { org: 'Everest Group', name: 'PEAK Matrix® for Advanced IT Services 2025' },
-  { org: 'GigaOm', name: 'A Leader in the GigaOm Radar for Cloud Native Engineering' },
-  { org: 'IDC', name: 'IDC MarketScape: Worldwide Cloud Professional Services 2025' },
+  { org: 'Methodology', name: 'The Glyphatic Transformation Framework — 7-Step Methodology' },
+  { org: 'Platform', name: 'Mewayz — Business Operating System' },
+  { org: 'Platform', name: 'Edquate — AI-Powered Education Intelligence' },
+  { org: 'Intelligence', name: 'Glyphatic Intelligence — Research, Insights & Playbooks' },
+  { org: 'Approach', name: 'AI + Human Intelligence Operating Model' },
 ]
 
 export default function Home() {
   return (
     <>
+      {/* 01. Hero */}
       <HeroVideoSection />
+      {/* 02. Glyphatic Intelligence */}
       <PromoCarousel />
+      {/* 03. The Business Shift */}
       <AIWorldSection />
+      {/* 04. Why Glyphatic */}
       <PlatformizationSection />
+      {/* 05. Core Capabilities */}
       <PlatformTabsSection />
+      {/* 06. Solutions */}
       <DefendAtScaleSection />
-      <TrustedByLogos title="Trusted by teams building what's next." />
-      <AwardCarousel awards={GLOBAL_AWARDS} />
+      {/* 07. Products */}
       <SolutionsTabSection />
+      {/* Trusted By */}
+      <TrustedByLogos title="Trusted by teams driving transformation." />
+      {/* Awards / IP */}
+      <AwardCarousel awards={GLOBAL_AWARDS} />
+      {/* 10. Case Studies Banner */}
       <CustomerTransformationBanner />
+      {/* 11. Testimonials */}
       <CustomerVideoSection />
+      {/* 09. Transformation Framework */}
       <EngageGridSection />
+      {/* 14. Glyphatic Intelligence / Resources */}
       <PerspectivesCarousel />
+      {/* 15. Executive CTA */}
       <NewsletterSection />
     </>
   )

@@ -16,13 +16,13 @@ export function MegaNavColumn({ column, className }: MegaNavColumnProps) {
       {column.headingHref ? (
         <Link
           href={column.headingHref}
-          className="label-eyebrow mb-3 inline-flex items-center gap-1 text-neutral-400 hover:text-[#FA582D] transition-colors"
+          className="label-eyebrow mb-3 inline-flex items-center gap-1 text-neutral-500 dark:text-neutral-400 hover:text-[#FA582D] transition-colors"
         >
           {column.heading}
           <ArrowRight className="h-3 w-3" aria-hidden />
         </Link>
       ) : (
-        <p className="label-eyebrow mb-3 text-neutral-400 font-bold uppercase tracking-wider text-xs">{column.heading}</p>
+        <p className="label-eyebrow mb-3 text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-wider text-xs">{column.heading}</p>
       )}
       <ul className="space-y-2">
         {column.links.map((link) => (
@@ -32,7 +32,7 @@ export function MegaNavColumn({ column, className }: MegaNavColumnProps) {
               target={link.external ? '_blank' : undefined}
               rel={link.external ? 'noopener noreferrer' : undefined}
               className={cn(
-                'block text-sm text-neutral-300 font-medium transition-all duration-200',
+                'block text-sm text-neutral-700 dark:text-neutral-300 font-medium transition-all duration-200',
                 'hover:text-[#FA582D] hover:pl-1'
               )}
             >

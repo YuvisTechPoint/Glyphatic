@@ -9,7 +9,6 @@ export interface ResourceCardProps {
   imageAlt?: string
   imageUrl?: string
   className?: string
-  theme?: 'light' | 'dark'
 }
 
 export function ResourceCard({
@@ -19,18 +18,13 @@ export function ResourceCard({
   imageAlt,
   imageUrl,
   className,
-  theme = 'light',
 }: ResourceCardProps) {
-  const isDark = theme === 'dark'
-
   return (
     <Link
       href={href}
       className={cn(
         'group flex flex-col overflow-hidden rounded-lg border transition-shadow hover:shadow-hover',
-        isDark 
-          ? 'bg-[#1a1a1a] border-white/10 shadow-none' 
-          : 'bg-white border-base-border shadow-card',
+        'bg-white dark:bg-[#1a1a1a] border-neutral-200 dark:border-white/10 shadow-card dark:shadow-none transition-colors duration-200',
         className,
       )}
     >
@@ -51,10 +45,7 @@ export function ResourceCard({
       </div>
       <div className="flex flex-1 flex-col p-5">
         <span className="text-label uppercase text-brand-500">{category}</span>
-        <h3 className={cn(
-          "mt-2 font-display text-body-lg font-semibold leading-snug group-hover:text-brand-500 transition-colors",
-          isDark ? "text-white" : "text-neutral-900"
-        )}>
+        <h3 className="mt-2 font-display text-body-lg font-semibold leading-snug group-hover:text-brand-500 transition-colors text-neutral-900 dark:text-white">
           {title}
         </h3>
         <span className="mt-auto inline-flex items-center gap-1 pt-4 text-body-sm font-medium text-brand-500">

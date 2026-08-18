@@ -9,35 +9,35 @@ import { FadeInView } from '@/components/animations/FadeInView'
 
 const PERSPECTIVE_CARDS = [
   {
+    category: 'INSIGHTS',
+    title:
+      'Why Most AI Transformation Projects Fail — And How to Avoid It',
+    href: '/resources/insights/ai-transformation-failure',
+    imageAlt: 'Business strategy dashboard',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop'
+  },
+  {
+    category: 'RESEARCH',
+    title: 'The State of Business Automation in 2026',
+    href: '/resources/research/business-automation-2026',
+    imageAlt: 'Automation workflow',
+    imageUrl: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=800&auto=format&fit=crop'
+  },
+  {
+    category: 'PLAYBOOK',
+    title:
+      'The Revenue Transformation Playbook for Mid-Market Enterprises',
+    href: '/resources/playbooks/revenue-transformation',
+    imageAlt: 'Revenue growth chart',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop'
+  },
+  {
     category: 'CASE STUDY',
     title:
-      'Why We Rewrote Our Client\'s Payment Service in Rust',
-    href: '/case-studies/rust-payment-service',
-    imageAlt: 'Rust code on screen',
-    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    category: 'ARCHITECTURE',
-    title: 'eBPF for Dummies: High-Performance Networking',
-    href: '/blog/ebpf-for-dummies',
-    imageAlt: 'Network nodes',
-    imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    category: 'INDUSTRY INSIGHT',
-    title:
-      'The True Cost of Offshore Engineering in 2026',
-    href: '/blog/true-cost-offshore-engineering',
-    imageAlt: 'Business graphs',
-    imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    category: 'OPEN SOURCE',
-    title:
-      'Introducing Go-Migrate: Our Open-Source Tool for Zero-Downtime Data Migrations',
-    href: '/open-source/go-migrate',
-    imageAlt: 'Terminal output',
-    imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop'
+      'How a Healthcare Group Reduced Operational Costs by 40% with Intelligent Automation',
+    href: '/resources/case-studies/healthcare-automation',
+    imageAlt: 'Healthcare operations',
+    imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop'
   },
 ] as const
 
@@ -70,16 +70,16 @@ export function PerspectivesCarousel() {
   }, [emblaApi])
 
   return (
-    <section className="section-padding bg-[#111111]">
+    <section className="section-padding bg-neutral-50 dark:bg-[#111111] transition-colors duration-200">
       <div className="container-wide">
         <FadeInView>
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="max-w-2xl font-display text-display-md text-white">
-              Engineering insights from the teams actually building it.
+            <h2 className="max-w-2xl font-display text-display-md text-neutral-900 dark:text-white">
+              Ideas that move businesses forward.
             </h2>
             <div className="flex items-center gap-3">
               <Link
-                href="/blog"
+                href="/resources"
                 className="text-body-md font-medium text-brand-500 hover:text-brand-600"
               >
                 View all
@@ -90,7 +90,7 @@ export function PerspectivesCarousel() {
                   onClick={scrollPrev}
                   disabled={!canScrollPrev}
                   aria-label="Previous perspectives"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 text-white hover:border-brand-500 hover:text-brand-500 disabled:opacity-40"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-neutral-300 dark:border-white/20 text-neutral-700 dark:text-white hover:border-brand-500 hover:text-brand-500 disabled:opacity-40 transition-colors"
                 >
                   <ChevronLeft className="h-4 w-4" />
                 </button>
@@ -99,7 +99,7 @@ export function PerspectivesCarousel() {
                   onClick={scrollNext}
                   disabled={!canScrollNext}
                   aria-label="Next perspectives"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 text-white hover:border-brand-500 hover:text-brand-500 disabled:opacity-40"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-neutral-300 dark:border-white/20 text-neutral-700 dark:text-white hover:border-brand-500 hover:text-brand-500 disabled:opacity-40 transition-colors"
                 >
                   <ChevronRight className="h-4 w-4" />
                 </button>
@@ -121,7 +121,6 @@ export function PerspectivesCarousel() {
                   href={card.href}
                   imageAlt={card.imageAlt}
                   imageUrl={card.imageUrl}
-                  theme="dark"
                 />
               </div>
             ))}

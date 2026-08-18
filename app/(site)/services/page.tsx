@@ -79,10 +79,10 @@ const METHODOLOGY = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[#0A0D14] pt-24 pb-32 text-white">
+    <main className="min-h-screen bg-neutral-50 dark:bg-[#0A0D14] pt-24 pb-32 text-neutral-900 dark:text-white transition-colors duration-200">
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 lg:py-24 border-b border-white/5">
+      <section className="relative overflow-hidden py-16 lg:py-24 border-b border-neutral-200 dark:border-white/5">
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(250,88,45,0.12)_0%,_transparent_70%)] pointer-events-none" />
         <div className="container-wide relative z-10">
           <FadeInView>
@@ -93,7 +93,7 @@ export default function ServicesPage() {
               Foundational Engineering <br className="hidden sm:block" />
               <span className="text-[#FA582D]">Built to Scale Without Limits.</span>
             </h1>
-            <p className="text-[1.125rem] md:text-[1.25rem] text-neutral-400 font-medium max-w-2xl leading-relaxed">
+            <p className="text-[1.125rem] md:text-[1.25rem] text-neutral-600 dark:text-neutral-400 font-medium max-w-2xl leading-relaxed">
               We design, build, and operate resilient technology foundations for ambitious Indian enterprises demanding sub-second latencies and 99.999% uptime.
             </p>
           </FadeInView>
@@ -109,13 +109,13 @@ export default function ServicesPage() {
                 <span className="block text-xs font-bold tracking-[0.15em] text-[#FA582D] uppercase mb-3">
                   Core Specializations
                 </span>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white tracking-tight">
                   Tailored Technology Solutions
                 </h2>
               </div>
               <Link
                 href="/discuss-architecture"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#FA582D] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#FA582D] hover:text-neutral-900 dark:hover:text-white transition-colors"
               >
                 Discuss a custom service scope <ArrowRight className="h-4 w-4" />
               </Link>
@@ -125,26 +125,26 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICES.map((service, idx) => (
               <FadeInView key={service.title} delay={idx * 0.1}>
-                <div className="group relative flex flex-col justify-between h-full rounded-2xl border border-white/10 bg-[#111111] p-8 transition-all hover:border-white/20 hover:bg-[#161616]">
+                <div className="group relative flex flex-col justify-between h-full rounded-2xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-[#111111] p-8 shadow-sm transition-all hover:border-neutral-300 dark:hover:border-white/20 hover:bg-neutral-50 dark:hover:bg-[#161616]">
                   <div>
-                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FA582D]/10 text-[#FA582D] group-hover:bg-[#FA582D] group-hover:text-black transition-colors">
+                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#FA582D]/10 text-[#FA582D] group-hover:bg-[#FA582D] group-hover:text-white transition-colors">
                       <service.icon className="h-6 w-6" />
                     </div>
-                    <span className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2">
+                    <span className="block text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2">
                       {service.subtitle}
                     </span>
-                    <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                    <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">
                       {service.title}
                     </h3>
-                    <p className="text-neutral-400 text-sm leading-relaxed mb-6">
+                    <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">
                       {service.description}
                     </p>
                   </div>
 
                   <div>
-                    <div className="space-y-2 mb-8 border-t border-white/5 pt-6">
+                    <div className="space-y-2 mb-8 border-t border-neutral-200 dark:border-white/5 pt-6">
                       {service.features.map((feat) => (
-                        <div key={feat} className="flex items-center gap-2 text-xs font-medium text-neutral-300">
+                        <div key={feat} className="flex items-center gap-2 text-xs font-medium text-neutral-700 dark:text-neutral-300">
                           <CheckCircle className="h-3.5 w-3.5 text-[#FA582D] shrink-0" />
                           <span>{feat}</span>
                         </div>
@@ -153,7 +153,7 @@ export default function ServicesPage() {
 
                     <Link
                       href={service.href}
-                      className="inline-flex items-center gap-2 text-sm font-bold text-[#FA582D] group-hover:text-white transition-colors"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-[#FA582D] group-hover:text-neutral-900 group-hover:dark:text-white transition-colors"
                     >
                       Explore Service <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
@@ -166,14 +166,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Engineering Methodology Section */}
-      <section className="py-20 bg-[#0d1017] border-y border-white/5">
+      <section className="py-20 bg-white dark:bg-[#0d1017] border-y border-neutral-200 dark:border-white/5 transition-colors duration-200">
         <div className="container-wide">
           <FadeInView>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="block text-xs font-bold tracking-[0.15em] text-[#FA582D] uppercase mb-3">
                 HOW WE DELIVER
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-white">
                 Boutique Delivery Methodology
               </h2>
             </div>
@@ -182,12 +182,12 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {METHODOLOGY.map((m, idx) => (
               <FadeInView key={m.step} delay={idx * 0.15}>
-                <div className="rounded-2xl border border-white/5 bg-[#121212] p-8 h-full">
+                <div className="rounded-2xl border border-neutral-200 dark:border-white/5 bg-neutral-50 dark:bg-[#121212] p-8 h-full shadow-sm transition-colors duration-200">
                   <div className="text-3xl font-display font-bold text-[#FA582D] mb-4">
                     {m.step}
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{m.title}</h3>
-                  <p className="text-xs text-neutral-400 leading-relaxed">{m.desc}</p>
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">{m.title}</h3>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">{m.desc}</p>
                 </div>
               </FadeInView>
             ))}
@@ -199,18 +199,18 @@ export default function ServicesPage() {
       <section className="pt-20">
         <div className="container-wide">
           <FadeInView>
-            <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#1a1a1a] via-[#111111] to-[#0A0D14] p-10 lg:p-16 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-2xl relative overflow-hidden">
+            <div className="rounded-3xl border border-neutral-200 dark:border-white/10 bg-gradient-to-br from-neutral-100 via-white to-neutral-50 dark:from-[#1a1a1a] dark:via-[#111111] dark:to-[#0A0D14] p-10 lg:p-16 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-2xl relative overflow-hidden transition-colors duration-200">
               <div className="max-w-2xl">
-                <h2 className="text-3xl lg:text-4xl font-display font-bold text-white mb-4">
+                <h2 className="text-3xl lg:text-4xl font-display font-bold text-neutral-900 dark:text-white mb-4">
                   Ready to upgrade your technology foundation?
                 </h2>
-                <p className="text-neutral-400 text-base leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed">
                   Connect directly with our lead architects to evaluate your infrastructure, eliminate bottlenecks, and scale with confidence.
                 </p>
               </div>
               <Link
                 href="/discuss-architecture"
-                className="shrink-0 inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#FA582D] px-8 text-base font-bold text-black transition-colors hover:bg-[#E0431A]"
+                className="shrink-0 inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[#FA582D] px-8 text-base font-bold text-white transition-colors hover:bg-[#E0431A]"
               >
                 Discuss Your Architecture <ArrowRight className="h-5 w-5" />
               </Link>

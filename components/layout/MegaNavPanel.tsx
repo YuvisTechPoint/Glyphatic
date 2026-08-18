@@ -57,7 +57,7 @@ export function MegaNavPanel({
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           className={cn(
-            'absolute left-0 right-0 top-full z-50 border-t border-white/10 bg-[#141414] shadow-2xl backdrop-blur-xl',
+            'absolute left-0 right-0 top-full z-50 border-t border-neutral-200 dark:border-white/10 bg-white dark:bg-[#141414] shadow-2xl backdrop-blur-xl transition-colors duration-200',
             className
           )}
           role="region"

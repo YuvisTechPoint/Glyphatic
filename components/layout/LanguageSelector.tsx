@@ -123,11 +123,11 @@ export function LanguageSelector({ variant = 'dropdown', className }: LanguageSe
           align="end"
           sideOffset={8}
           className={cn(
-            'z-[150] min-w-[240px] rounded-md border border-neutral-200 bg-white p-1 shadow-nav',
+            'z-[150] min-w-[240px] rounded-md border border-neutral-200 dark:border-white/10 bg-white dark:bg-[#1a1a1a] p-1 shadow-nav',
             'animate-in fade-in-0 zoom-in-95'
           )}
         >
-          <DropdownMenu.Label className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
+          <DropdownMenu.Label className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
             Select region
           </DropdownMenu.Label>
           {REGIONS.map((region) => (
@@ -135,17 +135,17 @@ export function LanguageSelector({ variant = 'dropdown', className }: LanguageSe
               key={region.id}
               onSelect={() => handleSelect(region.id)}
               className={cn(
-                'flex cursor-pointer items-center justify-between rounded-md px-3 py-2 text-sm outline-none',
-                'focus:bg-neutral-50',
-                region.id === selected && 'bg-brand-50 text-brand-700'
+                'flex cursor-pointer items-center justify-between rounded-md px-3 py-2 text-sm outline-none transition-colors',
+                'focus:bg-neutral-50 dark:focus:bg-white/10 text-neutral-800 dark:text-neutral-200',
+                region.id === selected && 'bg-[#FA582D]/10 text-[#FA582D]'
               )}
             >
               {region.label}
               {region.id === selected && <Check className="h-4 w-4" />}
             </DropdownMenu.Item>
           ))}
-          <DropdownMenu.Separator className="my-1 h-px bg-neutral-200" />
-          <p className="px-3 py-2 text-xs text-neutral-500">
+          <DropdownMenu.Separator className="my-1 h-px bg-neutral-200 dark:bg-white/10" />
+          <p className="px-3 py-2 text-xs text-neutral-500 dark:text-neutral-400">
             Additional regions coming soon.
           </p>
         </DropdownMenu.Content>

@@ -9,7 +9,7 @@ import { FadeInView } from '@/components/animations/FadeInView'
 import { tabPanel } from '@/lib/animations'
 import { cn } from '@/lib/utils'
 
-type ThemeColor = 'yellow' | 'green' | 'emerald' | 'blue'
+type ThemeColor = 'yellow' | 'green' | 'emerald' | 'blue' | 'purple' | 'orange'
 
 interface PlatformTab {
   id: string
@@ -26,107 +26,199 @@ interface PlatformTab {
 
 const PLATFORM_TABS: PlatformTab[] = [
   {
-    id: 'network',
-    label: 'AI-Powered Network Security',
-    headline: 'AI-Powered Network Security',
+    id: 'ai-transformation',
+    label: 'AI Transformation',
+    headline: 'AI TRANSFORMATION',
     themeColor: 'yellow',
-    body: 'Securing everyone and everything from the latest threats in every location. Built for Zero Trust and powered by AI, the Strata™ Network Security Platform proactively monitors, analyzes and prevents sophisticated threats in real time with less complexity, enabling secure growth and innovation for your organization.',
+    body: 'Make AI operational across your organization. We help you move from AI experimentation to AI operations.',
     stats: [
-      { value: '95', suffix: '%', label: 'OF THE FORTUNE 100' },
-      { value: '70', suffix: ' K', label: 'CUSTOMERS' },
+      { value: 'AI', suffix: '-native', label: 'STRATEGY TO EXECUTION' },
+      { value: '10+', suffix: '', label: 'CORE CAPABILITIES' },
     ],
-    ctaText: 'Explore Network Security',
-    ctaHref: '/network-security',
+    ctaText: 'Explore AI Transformation',
+    ctaHref: '/solutions/ai-transformation',
     awards: [
-      { org: 'Gartner', name: '2025 Gartner® Magic Quadrant™ for Hybrid Mesh Firewall' },
-      { org: 'Gartner', name: '2025 Gartner® Magic Quadrant™ for SASE Platforms' },
-      { org: 'Forrester', name: 'The Forrester Wave™: Enterprise Firewall Solutions' },
-      { org: 'Gartner', name: 'Gartner® Magic Quadrant™ for Single-Vendor SASE' },
+      { org: 'Service', name: 'AI Strategy & Roadmap Development' },
+      { org: 'Service', name: 'Custom AI Solution Development' },
+      { org: 'Service', name: 'AI Agent Development & Deployment' },
+      { org: 'Service', name: 'Generative AI Implementation' },
     ],
     logos: [
+      { name: 'Salesforce' },
+      { name: 'Infosys' },
+      { name: 'Toyota' },
+      { name: 'Panasonic' },
+      { name: 'Colgate' },
+      { name: 'Pfizer' },
       { name: 'Westfield' },
+    ],
+  },
+  {
+    id: 'automation',
+    label: 'Intelligent Automation',
+    headline: 'INTELLIGENT AUTOMATION',
+    themeColor: 'green',
+    body: 'Eliminate manual work systematically. We design and deploy automation systems that streamline operations.',
+    stats: [
+      { value: 'Zero', suffix: '-error', label: 'WORKFLOW DESIGN' },
+      { value: 'RPA', suffix: '', label: 'PROCESS AUTOMATION' },
+    ],
+    ctaText: 'Explore Automation',
+    ctaHref: '/services/ai-automation',
+    awards: [
+      { org: 'Service', name: 'Workflow Automation Design' },
+      { org: 'Service', name: 'Robotic Process Automation (RPA)' },
+      { org: 'Service', name: 'Intelligent Document Processing' },
+      { org: 'Service', name: 'Customer Service Automation' },
+    ],
+    logos: [
       { name: 'TriHealth' },
+      { name: 'Maximus' },
+      { name: 'Transgourmet' },
+      { name: 'Sabre' },
+      { name: 'ADT' },
+      { name: 'Flex' },
+      { name: 'AutoNation' },
+    ],
+  },
+  {
+    id: 'infrastructure',
+    label: 'Digital Infrastructure',
+    headline: 'DIGITAL INFRASTRUCTURE',
+    themeColor: 'emerald',
+    body: 'Build modern, scalable technology foundations. We architect cloud-native environments and robust backend systems.',
+    stats: [
+      { value: 'Cloud', suffix: '-native', label: 'INFRASTRUCTURE' },
+      { value: 'Secure', suffix: '', label: 'CYBERSECURITY' },
+    ],
+    ctaText: 'Explore Digital Infrastructure',
+    ctaHref: '/services/digital-infrastructure',
+    awards: [
+      { org: 'Service', name: 'Cloud Architecture & Migration' },
+      { org: 'Service', name: 'Enterprise Application Development' },
+      { org: 'Service', name: 'Web & Mobile App Development' },
+      { org: 'Service', name: 'System Integration & API Dev' },
+    ],
+    logos: [
+      { name: 'Salesforce' },
+      { name: 'Schlumberger' },
+      { name: 'Northern Trust' },
+      { name: 'Invest Bank' },
+      { name: 'Caesar\'s' },
+      { name: 'Resolution Life' },
+      { name: 'NBC Universal' },
+    ],
+  },
+  {
+    id: 'growth',
+    label: 'Growth & Revenue',
+    headline: 'GROWTH & REVENUE OPERATIONS',
+    themeColor: 'blue',
+    body: 'Build high-performance revenue engines. We optimize sales processes and marketing technology stack.',
+    stats: [
+      { value: 'RevOps', suffix: '', label: 'STRATEGY & DESIGN' },
+      { value: 'CRM', suffix: '', label: 'IMPLEMENTATION & OPTIM.' },
+    ],
+    ctaText: 'Explore Growth & Revenue',
+    ctaHref: '/services/growth-marketing',
+    awards: [
+      { org: 'Service', name: 'Revenue Operations Strategy' },
+      { org: 'Service', name: 'Sales Process Design & Optimization' },
+      { org: 'Service', name: 'CRM Implementation & Optimization' },
+      { org: 'Service', name: 'Marketing Automation' },
+    ],
+    logos: [
       { name: 'Village Roadshow' },
       { name: 'US Signals' },
-      { name: 'Salesforce' },
-    ],
-  },
-  {
-    id: 'secops',
-    label: 'AI-Driven Security Operations',
-    headline: 'AI-Driven Security Operations',
-    themeColor: 'green',
-    body: 'Transform the SOC and enable better, faster security with the #1 AI-driven SecOps platform powered by unified data, artificial intelligence and automation.',
-    stats: [
-      { value: '700', suffix: '+', label: 'PARTNER INTEGRATIONS' },
-      { value: '480', suffix: ' B', label: 'ENDPOINTS SCANNED DAILY' },
-    ],
-    ctaText: 'Explore SecOps',
-    ctaHref: '/cortex',
-    awards: [
-      { org: 'Gartner', name: '2024 Gartner® Magic Quadrant™ for Endpoint Protection Platforms' },
-      { org: 'Forrester', name: 'Forrester Cybersecurity IR Services Wave' },
-      { org: 'Frost & Sullivan', name: 'Frost & Sullivan MDR Radar' },
-      { org: 'Forrester', name: 'Forrester Wave™: Extended Detection And Response Platforms, Q2 2024' },
-    ],
-    logos: [
-      { name: 'Infosys' },
-      { name: 'Schlumberger' },
       { name: 'Grupo Bimbo' },
-      { name: 'Better' },
-      { name: 'Toyota' },
-    ],
-  },
-  {
-    id: 'cloud',
-    label: 'Real-Time Cloud Security',
-    headline: 'Real-Time Cloud Security',
-    themeColor: 'emerald',
-    body: "See more, remediate faster, and prevent what others miss with independent, multi-cloud protection on the only platform that merges the industry's leading CNAPP with best-in-class CDR.",
-    stats: [
-      { value: '90', suffix: '%', label: 'RISK REDUCTION WITH SHIFT LEFT' },
-      { value: '25', suffix: 'x', label: 'REDUCTION IN ALERTS & REMEDIATION WORKFLOWS' },
-    ],
-    ctaText: 'Explore Cloud Security',
-    ctaHref: '/cortex/cloud',
-    awards: [
-      { org: 'GigaOm', name: 'A Leader and Outperformer in the GigaOm Radar for CIEM' },
-      { org: 'GigaOm', name: 'Palo Alto Networks: Cloud Security Leader in First-Ever CNAPP Report' },
-      { org: 'Forrester', name: 'The Forrester Wave™: Cloud Workload Security, Q1 2024' },
-      { org: 'Frost & Sullivan', name: 'Frost Radar™: Cloud Security Posture Management, 2024' },
-    ],
-    logos: [
-      { name: 'Infosys' },
-      { name: 'Schlumberger' },
-      { name: 'Grupo Bimbo' },
-      { name: 'Toyota' },
-      { name: 'Salesforce' },
-    ],
-  },
-  {
-    id: 'identity',
-    label: 'Next-Generation Identity Security',
-    headline: 'Next-Generation Identity Security',
-    themeColor: 'blue',
-    body: 'Idira secures every identity for the enterprise - human, machine and agentic - with a unified control plane that discovers risk, applies privilege dynamically, and governs the full lifecycle from first access to final session.',
-    stats: [
-      { value: '10', suffix: ' K', label: 'CUSTOMERS' },
-      { value: '55', suffix: '%', label: 'OF THE FORTUNE 500' },
-    ],
-    ctaText: 'Explore Identity Security',
-    ctaHref: '/idira',
-    awards: [
-      { org: 'Gartner', name: 'Magic Quadrant ® for Privileged Access Management, 2025' },
-      { org: 'Forrester', name: 'The Forrester Wave™: Privileged Identity Management, 2025' },
-      { org: 'KuppingerCole', name: 'Leadership Compass: Access Management, 2025' },
-      { org: 'KuppingerCole', name: 'Leadership Compass: Identity Threat Detection & Response, 2025' },
-    ],
-    logos: [
       { name: 'Carnival Corporation' },
-      { name: 'Maximus' },
-      { name: 'Northern Trust' },
-      { name: 'Transgourmet' },
+      { name: 'Grant Thornton' },
+      { name: 'Dish' },
+      { name: 'Aaron\'s' },
+    ],
+  },
+  {
+    id: 'brand',
+    label: 'Brand & Authority',
+    headline: 'BRAND & MARKET AUTHORITY',
+    themeColor: 'purple',
+    body: 'Build recognition, trust, and market presence. We establish strategic thought leadership programs.',
+    stats: [
+      { value: 'SEO', suffix: '', label: 'SEARCH & STRATEGY' },
+      { value: 'Brand', suffix: '', label: 'POSITIONING & DESIGN' },
+    ],
+    ctaText: 'Explore Brand & Authority',
+    ctaHref: '/services/brand-authority',
+    awards: [
+      { org: 'Service', name: 'Brand Strategy & Positioning' },
+      { org: 'Service', name: 'Content Strategy & Creation' },
+      { org: 'Service', name: 'Thought Leadership Programs' },
+      { org: 'Service', name: 'SEO & Search Strategy' },
+    ],
+    logos: [
       { name: 'Panasonic' },
+      { name: 'Infosys' },
+      { name: 'Toyota' },
+      { name: 'Colgate' },
+      { name: 'Maximus' },
+      { name: 'Transgourmet' },
+      { name: 'Sabre' },
+    ],
+  },
+  {
+    id: 'operations',
+    label: 'Intelligent Operations',
+    headline: 'INTELLIGENT OPERATIONS (BPO)',
+    themeColor: 'orange',
+    body: 'Run critical business functions with AI-enhanced teams. We deliver operational excellence at scale.',
+    stats: [
+      { value: '24/7', suffix: '', label: 'OPERATIONS MANAGEMENT' },
+      { value: 'BPO', suffix: '', label: 'MANAGED SERVICES' },
+    ],
+    ctaText: 'Explore Operations',
+    ctaHref: '/services/managed-services',
+    awards: [
+      { org: 'Service', name: 'Customer Service Operations' },
+      { org: 'Service', name: 'Technical Support Operations' },
+      { org: 'Service', name: 'Sales Development & Lead Qual.' },
+      { org: 'Service', name: 'Data Management & Processing' },
+    ],
+    logos: [
+      { name: 'Pfizer' },
+      { name: 'TriHealth' },
+      { name: 'Westfield' },
+      { name: 'Flex' },
+      { name: 'AutoNation' },
+      { name: 'ADT' },
+      { name: 'Northern Trust' },
+    ],
+  },
+  {
+    id: 'analytics',
+    label: 'BI & Analytics',
+    headline: 'BUSINESS INTELLIGENCE & ANALYTICS',
+    themeColor: 'emerald',
+    body: 'Turn data into competitive advantage. We build unified data architectures and predictive analytics systems.',
+    stats: [
+      { value: 'BI', suffix: '', label: 'ARCHITECTURE & PORTALS' },
+      { value: 'Data', suffix: '', label: 'STRATEGY & GOVERNANCE' },
+    ],
+    ctaText: 'Explore BI & Analytics',
+    ctaHref: '/services/data-intelligence',
+    awards: [
+      { org: 'Service', name: 'Data Strategy & Governance' },
+      { org: 'Service', name: 'Business Intelligence Architecture' },
+      { org: 'Service', name: 'Dashboard & Reporting Development' },
+      { org: 'Service', name: 'Advanced Analytics & Forecasting' },
+    ],
+    logos: [
+      { name: 'Salesforce' },
+      { name: 'Schlumberger' },
+      { name: 'Grant Thornton' },
+      { name: 'Invest Bank' },
+      { name: 'Resolution Life' },
+      { name: 'NBC Universal' },
+      { name: 'Dish' },
     ],
   },
 ]
@@ -160,10 +252,26 @@ const THEME_STYLES = {
     title: 'text-[#2962FF]',
     btnBg: 'bg-[#2962FF]',
     btnText: 'text-white',
-    awardBg: 'bg-[#84FFFF]', // cyan award cards
+    awardBg: 'bg-[#84FFFF]',
     iconColor: 'text-[#2962FF]',
     borderLine: 'bg-[#2962FF]',
-  }
+  },
+  purple: {
+    title: 'text-[#B388FF]',
+    btnBg: 'bg-[#B388FF]',
+    btnText: 'text-black',
+    awardBg: 'bg-[#B388FF]',
+    iconColor: 'text-[#B388FF]',
+    borderLine: 'bg-[#B388FF]',
+  },
+  orange: {
+    title: 'text-[#FA582D]',
+    btnBg: 'bg-[#FA582D]',
+    btnText: 'text-white',
+    awardBg: 'bg-[#FFAB91]',
+    iconColor: 'text-[#FA582D]',
+    borderLine: 'bg-[#FA582D]',
+  },
 }
 
 export function PlatformTabsSection() {
@@ -210,13 +318,13 @@ export function PlatformTabsSection() {
   const styles = THEME_STYLES[current.themeColor]
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-[#111111]">
+    <section ref={containerRef} className="relative h-[700vh] bg-neutral-50 dark:bg-[#111111] transition-colors duration-200">
       <div className="sticky top-0 min-h-screen flex flex-col justify-center py-16 md:py-24 overflow-hidden">
         <div className="container-wide relative z-10 w-full">
           <FadeInView>
             <div className="w-[120px] md:w-[150px] border-t border-[#FA582D] mb-6" />
-            <h2 className="max-w-2xl font-display text-[2rem] md:text-[2.5rem] lg:text-[2.75rem] font-medium leading-[1.2] text-white">
-              Introducing the Platforms,<br className="hidden md:block" />powered by Precision AI
+            <h2 className="max-w-2xl font-display text-[2rem] md:text-[2.5rem] lg:text-[2.75rem] font-medium leading-[1.2] text-neutral-900 dark:text-white">
+              Intelligent transformation<br className="hidden md:block" />across the entire business.
             </h2>
           </FadeInView>
 
@@ -232,7 +340,7 @@ export function PlatformTabsSection() {
                       onClick={() => handleTabClick(index)}
                       className={cn(
                         'shrink-0 flex items-center gap-3 py-2 text-[13px] md:text-[14px] font-medium transition-colors',
-                        isActive ? 'text-white' : 'text-[#999999] hover:text-white',
+                        isActive ? 'text-neutral-900 dark:text-white' : 'text-neutral-500 dark:text-[#999999] hover:text-neutral-900 dark:hover:text-white',
                       )}
                     >
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={cn("transition-colors", isActive ? tabStyles.iconColor : "text-[#666666]")}>
@@ -275,18 +383,18 @@ export function PlatformTabsSection() {
                       {current.headline}
                     </h3>
                     
-                    <p className="max-w-2xl text-[15px] md:text-[16px] text-white leading-relaxed font-medium">
+                    <p className="max-w-2xl text-[15px] md:text-[16px] text-neutral-800 dark:text-white leading-relaxed font-medium">
                       {current.body}
                     </p>
 
                     <div className="mt-10 md:mt-12 flex gap-12 md:gap-16">
                       {current.stats.map((stat) => (
                         <div key={stat.label}>
-                          <div className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-2 leading-none flex items-baseline">
+                          <div className="text-[2rem] md:text-[2.5rem] font-bold text-neutral-900 dark:text-white mb-2 leading-none flex items-baseline">
                             {stat.value}
                             {stat.suffix && <span className="text-[1.5rem] ml-1">{stat.suffix}</span>}
                           </div>
-                          <div className="text-[10px] md:text-[11px] font-bold text-white uppercase tracking-widest">
+                          <div className="text-[10px] md:text-[11px] font-bold text-neutral-900 dark:text-white uppercase tracking-widest">
                             {stat.label}
                           </div>
                         </div>
@@ -308,10 +416,10 @@ export function PlatformTabsSection() {
                     </div>
                   </div>
                   
-                  {/* Right Content Side - Award Cards */}
+                  {/* Right Content Side - Capability Cards */}
                   <div className="flex flex-col">
                     <div className="flex justify-end mb-4">
-                      <button className="flex items-center gap-2 text-[12px] font-bold text-white hover:text-gray-300 transition-colors uppercase tracking-wider">
+                      <button className="flex items-center gap-2 text-[12px] font-bold text-neutral-600 dark:text-white hover:text-neutral-900 dark:hover:text-gray-300 transition-colors uppercase tracking-wider">
                         See all
                         <Plus className="h-4 w-4" />
                       </button>
